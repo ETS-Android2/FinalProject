@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/nav_image"
+        android:title="@string/nav_image"
+        android:icon="@drawable/ufo"
+        android:orderInCategory="1"
+        app:showAsAction="always">
+    </item>
+
+    <item android:id="@+id/nav_jokes"
+        android:title="@string/nav_jokes"
+        android:icon="@drawable/towel"
+        android:orderInCategory="2"
+        app:showAsAction="always">
+    </item>
+
+    <item android:id="@+id/nav_saved"
+        android:title="@string/nav_saved"
+        android:icon="@drawable/comet"
+        android:orderInCategory="3"
+        app:showAsAction="always">
+    </item>
+
+    <item android:id="@+id/nav_main"
+        android:title="@string/nav_main"
+        android:icon="@drawable/number"
+        android:orderInCategory="4"
+        app:showAsAction="always">
+    </item>
+
+
+</menu>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Hitchiker\'s Guide</string>
+    <string name="nav_image">Space Images</string>
+    <string name="nav_jokes">Space Jokes</string>
+    <string name="nav_saved">Saved Images</string>
+    <string name="nav_main">Welcome Page</string>
 </resources>

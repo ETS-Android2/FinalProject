@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Guide de l\'auto-stoppeur</string>
+    <string name="nav_image">Images de l\'espace</string>
+    <string name="nav_jokes">Blagues de l\'espace</string>
+    <string name="nav_saved">Images enregistrées</string>
+    <string name="nav_main">Page d\'accueil</string>
+</resources>

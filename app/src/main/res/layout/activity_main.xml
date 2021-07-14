@@ -9,9 +9,9 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        tools:layout_editor_absoluteX="128dp"
+        android:layout_width="175dp"
+        android:layout_height="150dp"
+        tools:layout_editor_absoluteX="115dp"
         tools:layout_editor_absoluteY="179dp"
         tools:srcCompat="@drawable/logo" />
 

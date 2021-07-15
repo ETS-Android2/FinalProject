@@ -11,8 +11,14 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/comet" />
 
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date" />
+
     <TextView
-        android:id="@+id/rxTextGoesHere"
+        android:id="@+id/TextGoesHere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
@@ -20,11 +26,6 @@
         android:layout_marginStart="5sp"
         />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:inputType="date" />
     <!--    //android:background="@drawable/turtle_speech"-->
 <!--    //android:textColor="@color/black"-->
 

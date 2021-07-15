@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Guide de l\'auto-stoppeur</string>
-    <string name="nav_image">Images de l\'espace</string>
-    <string name="nav_jokes">Blagues de l\'espace</string>
-    <string name="nav_saved">Images enregistrées</string>
-    <string name="nav_main">Page d\'accueil</string>
     <string name="SL_Alert_msg1">selected row is</string>
     <string name="SL_Alert_Title">Do you want to delete this picture?</string>
     <string name="SL_Alert_msg2">selected Database is</string>

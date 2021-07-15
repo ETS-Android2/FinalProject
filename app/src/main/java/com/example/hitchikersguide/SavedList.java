@@ -1,5 +1,6 @@
 package com.example.hitchikersguide;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,7 +15,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class SavedList extends AppCompatActivity {
+    private ArrayList<SpacePic> elements = new ArrayList<>(); // Messages
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,7 @@ public class SavedList extends AppCompatActivity {
         //Define Next Activity
         Intent activityJK = new Intent(this, Jokes.class);
 
+        // Button to take you to Joke activity
         Button jokeButton = findViewById(R.id.SL_ToJokesButton);
         jokeButton.setOnClickListener(click -> startActivity(activityJK));
 
@@ -32,9 +37,40 @@ public class SavedList extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter();
         imgList.setAdapter(myAdapter);
 
-        // Progress bar will be on async task
+        //Add elements to the list view to start
+        String[] picDetails = {"date", "url", "HDurl", "description"};
+        SpacePic aPic = new SpacePic(picDetails, 1);
+        aPic.imgTitle = "Title";
+        elements.add(aPic);
+        imgList.setOnItemLongClickListener(
+                // Create a Dialog
+                (parent, view, position, id) -> {
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                    alertDialogBuilder.setTitle(getResources().getString(R.string.SL_Alert_Title))
+
+                            // Message
+                            .setMessage(getResources().getString(R.string.SL_Alert_msg1) + position + "\n"
+                                    + getResources().getString(R.string.SL_Alert_msg2) + id)
+
+                            // Yes Action
+                            .setPositiveButton(R.string.yes, (click, arg) -> {
+                                elements.remove(position);
+                                myAdapter.notifyDataSetChanged();
+                            })
+
+                            // No action
+                            .setNegativeButton(R.string.no, (click, arg) -> { })
+
+                            //Show the dialog
+                            .create().show();
+                    return true;
+                } );
+
+        //TODO: Progress bar will be on async task
     }
 
+
+        // ----------------------------------------------------------------------------------
     /**
      * Adapter Class for ListView
      */
@@ -42,12 +78,12 @@ public class SavedList extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 0;//elements.size();
+            return elements.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return null;//elements.get(position);
+            return elements.get(position);
         }
 
         @Override
@@ -60,12 +96,12 @@ public class SavedList extends AppCompatActivity {
             View newView = convertView;
             LayoutInflater inflater = getLayoutInflater();
 
-//            // make a new row
-//            newView = inflater.inflate(elements.get(position).getLayout(), parent, false);
-//
-//            //set text for new row
-//            TextView tView = newView.findViewById(elements.get(position).getTextId());
-//            tView.setText(elements.get(position).msgText);
+            // make a new row
+            newView = inflater.inflate(R.layout.img_list_row, parent, false);
+
+            //set text for new row
+            TextView tView = newView.findViewById(R.id.TextGoesHere);
+            tView.setText(elements.get(position).imgTitle);
 
             // return new row to be added to table
             return newView;

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Define Next Activity
         Intent activitySL = new Intent(this, SavedList.class);
+        Intent activityID = new Intent(this, ImageDisplay.class);
+
+        ImageButton thumbButton = findViewById(R.id.imageButton);
+        thumbButton.setOnClickListener(click -> startActivity(activityID));
 
         Button panicButton = findViewById(R.id.AM_dontPanic);
         panicButton.setOnClickListener(click  -> startActivity(activitySL));

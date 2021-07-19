@@ -1,5 +1,11 @@
 package com.example.hitchikersguide;
 
+/**
+ * Class to define the Space Picture Object
+ *
+ * @author Brianna Guerin
+ * @author Jenne Stamplecoskie
+ */
 public class SpacePic {
     String imgDate;
     String imgTitle;
@@ -8,7 +14,7 @@ public class SpacePic {
     String imgHDURL;
     long imgID;
 
-    public SpacePic(String[] args, long msgID){
+    public SpacePic(String[] args, long imgID){
         // send in parameters from JSON and save them.
         this.imgDate = args[0];
         this.imgURL = args[1];
@@ -19,8 +25,8 @@ public class SpacePic {
         this.imgID = imgID;
     }
 
-    // save title for the image
-    //TODO: open HDURL in web browser
+    // TODO: save title for the image
+    // TODO: open HDURL in web browser
     //Mod 3 Intents
 //    String url = "http://www.algonquincollege.com";
 //    Intent i = new Intent(Intent.ACTION_VIEW);

@@ -2,9 +2,6 @@ package com.example.hitchikersguide;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,18 +11,29 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
+/**
+ * Save List Activity holds the list of saved images
+ * Links to joke page through Jokes Button
+ *
+ * @author Brianna Guerin
+ * @author Jenne Stamplecoskie
+ */
 public class SavedList extends AppCompatActivity {
     private ArrayList<SpacePic> elements = new ArrayList<>(); // Messages
 
+    /**
+     * On Create Function initializes widgets and listeners
+     *
+     * @param savedInstanceState - the state that the app was last saved in
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saved_list);
 
-        //Define Next Activity
+        // Define Next Activity - Jokes
         Intent activityJK = new Intent(this, Jokes.class);
 
         // Button to take you to Joke activity
@@ -39,6 +47,7 @@ public class SavedList extends AppCompatActivity {
 
         //Add elements to the list view to start
         String[] picDetails = {"date", "url", "HDurl", "description"};
+
         SpacePic aPic = new SpacePic(picDetails, 1);
         aPic.imgTitle = "Title";
         elements.add(aPic);
@@ -70,9 +79,9 @@ public class SavedList extends AppCompatActivity {
     }
 
 
-        // ----------------------------------------------------------------------------------
+
     /**
-     * Adapter Class for ListView
+     * Adapter Class for ListView extends BaseAdapter
      */
     private class MyAdapter extends BaseAdapter {
 
@@ -88,23 +97,23 @@ public class SavedList extends AppCompatActivity {
 
         @Override
         public long getItemId(int position) {
-            return (long) position;
+            return position;
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View newView = convertView;
+        public View getView(int position, View myView, ViewGroup parent) {
+            //View newView = convertView;
             LayoutInflater inflater = getLayoutInflater();
 
             // make a new row
-            newView = inflater.inflate(R.layout.img_list_row, parent, false);
-
+            myView = inflater.inflate(R.layout.img_list_row, parent, false);
+            // TODO: Add view holder pattern in
             //set text for new row
-            TextView tView = newView.findViewById(R.id.TextGoesHere);
+            TextView tView = myView.findViewById(R.id.TextGoesHere);
             tView.setText(elements.get(position).imgTitle);
 
             // return new row to be added to table
-            return newView;
+            return myView;
         }
     }
 }

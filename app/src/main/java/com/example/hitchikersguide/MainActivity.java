@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * On Create Function initializes widgets and listeners
      *
-     * @param savedInstanceState
+     * @param savedInstanceState - the state that the app was last saved in
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
         // Enter Login Name
         TextView myName = findViewById(R.id.AM_enterName);
         Button enterName = findViewById(R.id.AM_saveLogin);
+        String parName = "Name";
         enterName.setOnClickListener(click -> {
-            saveSharedPrefs(myName.getText().toString());
+            saveSharedPrefs(parName , myName.getText().toString());
             panicButton.setText(String.format(getString(R.string.don_t_panic), myName.getText().toString()));
             // TODO: Close keyboardJenne
             // TODO: Ideally we would close this out once logged in and have it open only as an
@@ -57,20 +58,21 @@ public class MainActivity extends AppCompatActivity {
 
         // Load the sharedPreferences
         prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
-        String loginName = prefs.getString("Name", "");
+        String loginName = prefs.getString(parName, "");
 
         panicButton.setText(String.format(getString(R.string.don_t_panic), loginName));
     }
 
     /**
      * Saves users login name to share preferences for next opening of app
-     * @param stringToSave
+     * @param parName - this is the name of the parameter to be saved in shared preferences
+     * @param parValue - this is the value of the parameter to be saved in shared preferences
      */
-    private void saveSharedPrefs(String stringToSave)
+    private void saveSharedPrefs(String parName, String parValue)
     {
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("Name", stringToSave);
-        editor.commit();
+        editor.putString(parName, parValue);
+        editor.apply();
     }
     // TODO: Add Toolbar and Nav drawer
     // TODO: Background sb black, maybe with starts, text and buttons adjusted appropriately.

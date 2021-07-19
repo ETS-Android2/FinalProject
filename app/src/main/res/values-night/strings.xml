@@ -5,4 +5,9 @@
     <string name="SL_Alert_msg2">selected Database is</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="don_t_panic">Don\'t Panic %s</string>
+    <string name="mainImageDescription">Hitch hiking thumb in front ot a planet</string>
+    <string name="login">Login</string>
+    <string name="user_name">Name:</string>
+    <string name="jokes_page">Jokes Page</string>
 </resources>

@@ -6,42 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+    <!-- App Logo -->
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/AM_imageButton"
         android:layout_width="175dp"
         android:layout_height="150dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="116dp"
+        android:contentDescription="@string/mainImageDescription"
         android:src="@drawable/logo2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Takes you to Image Picker -->
     <Button
         android:id="@+id/AM_dontPanic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't Panic"
+        android:text="@string/don_t_panic"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="0.21" />
+        app:layout_constraintTop_toBottomOf="@+id/AM_imageButton"
+        app:layout_constraintVertical_bias="0.321" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+    <!-- Label for Name -->
+    <TextView
+        android:id="@+id/AM_labelForName"
+        android:labelFor="@id/AM_enterName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        android:text="@string/user_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/AM_enterName"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Enter Your Name -->
+    <EditText
+        android:id="@+id/AM_enterName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="Username"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@id/AM_labelForName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/AM_saveLogin" />
+
+    <!-- Store Name in Shared Preferences -->
+    <Button
+        android:id="@+id/AM_saveLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        app:layout_constraintStart_toEndOf="@id/AM_enterName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

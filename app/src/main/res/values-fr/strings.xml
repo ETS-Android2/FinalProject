@@ -5,9 +5,13 @@
     <string name="nav_jokes">Blagues de l\'espace</string>
     <string name="nav_saved">Images enregistrées</string>
     <string name="nav_main">Page d\'accueil</string>
-    <string name="SL_Alert_msg1">selected row is</string>
-    <string name="SL_Alert_Title">Do you want to delete this picture?</string>
+    <string name="SL_Alert_msg1">la ligne sélectionnée est</string>
+    <string name="SL_Alert_Title">Voulez-vous effacer cette image?</string>
     <string name="SL_Alert_msg2">selected Database is</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="don_t_panic">Ne panique pas %s</string>
+    <string name="mainImageDescription">Pouce d\'auto-stoppeur devant une planète</string>
+    <string name="login">Entrer</string>
+    <string name="user_name">Nom:</string>
 </resources>

@@ -20,4 +20,10 @@ public class SpacePic {
     }
 
     // save title for the image
+    //TODO: open HDURL in web browser
+    //Mod 3 Intents
+//    String url = "http://www.algonquincollege.com";
+//    Intent i = new Intent(Intent.ACTION_VIEW);
+//    i.setData( Uri.parse(url) );
+//    startActivity(i);
 }

@@ -76,6 +76,8 @@ public class SavedList extends AppCompatActivity {
                 } );
 
         //TODO: Progress bar will be on async task
+        //TODO: Snackbar to give list details
+        //TODO: Onclick listener
     }
 
 

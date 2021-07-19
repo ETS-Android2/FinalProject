@@ -11,6 +11,6 @@ public class Jokes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jokes);
 
-        //Toast with the answer when you hit the button
+        //TODO: Toast with the answer when you hit the button
     }
 }

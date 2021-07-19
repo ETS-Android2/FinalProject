@@ -12,6 +12,6 @@ public class ImageDisplay extends AppCompatActivity {
         setContentView(R.layout.activity_image_display);
         // Image, Image Description, Date, Link to HDURL
         //Snackbar to say are you sure you want to leave this page to open the HDURL
-
+        // TODO: Progress Bar
     }
 }

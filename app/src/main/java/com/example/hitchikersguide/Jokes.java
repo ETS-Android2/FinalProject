@@ -24,5 +24,8 @@ public class Jokes extends AppCompatActivity {
                 });
 
         //Toast with the answer when you hit the button
+
+        //TODO: Toast with the answer when you hit the button
+
     }
 }

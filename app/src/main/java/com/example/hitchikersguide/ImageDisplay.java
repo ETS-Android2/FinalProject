@@ -20,5 +20,8 @@ public class ImageDisplay extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         progressBar.setProgress(25);
 
+
+        // TODO: Progress Bar
+
     }
 }

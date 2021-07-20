@@ -11,6 +11,9 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 /**
@@ -21,7 +24,7 @@ import java.util.ArrayList;
  * @author Jenne Stamplecoskie
  */
 public class SavedList extends AppCompatActivity {
-    private ArrayList<SpacePic> elements = new ArrayList<>(); // Messages
+    private ArrayList<SpacePic> pictures = new ArrayList<>(); // Messages
 
     /**
      * On Create Function initializes widgets and listeners
@@ -45,12 +48,23 @@ public class SavedList extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter();
         imgList.setAdapter(myAdapter);
 
-        //Add elements to the list view to start
-        String[] picDetails = {"date", "url", "HDurl", "description"};
+        //Add elements to the list view
+        // TODO: Remove once we have a proper list of saved images
+        SpacePic pic;
+        for ( int i = 1; i <= 8; i++ ){
+            pic = new SpacePic("date" + i, "url" + i, i);
+            pictures.add(pic);
+        }
 
-        SpacePic aPic = new SpacePic(picDetails, 1);
-        aPic.imgTitle = "Title";
-        elements.add(aPic);
+        // Get details of an item on the list
+        imgList.setOnItemClickListener((parent, view, position, id) -> {
+            String details = "image date: " + pictures.get(position).imgDate +
+                    " url: " + pictures.get(position).imgURL + " ID: " +
+                    pictures.get(position).imgID;
+            Snackbar.make(imgList, details, Snackbar.LENGTH_LONG).show();
+        });
+
+        // Remove an item from the list
         imgList.setOnItemLongClickListener(
                 // Create a Dialog
                 (parent, view, position, id) -> {
@@ -63,7 +77,7 @@ public class SavedList extends AppCompatActivity {
 
                             // Yes Action
                             .setPositiveButton(R.string.yes, (click, arg) -> {
-                                elements.remove(position);
+                                pictures.remove(position);
                                 myAdapter.notifyDataSetChanged();
                             })
 
@@ -76,9 +90,9 @@ public class SavedList extends AppCompatActivity {
                 } );
 
         //TODO: Progress bar will be on async task
+        //TODO: Snackbar to give list details
+        //TODO: Onclick listener
     }
-
-
 
     /**
      * Adapter Class for ListView extends BaseAdapter
@@ -87,12 +101,12 @@ public class SavedList extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return elements.size();
+            return pictures.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return elements.get(position);
+            return pictures.get(position);
         }
 
         @Override
@@ -108,9 +122,12 @@ public class SavedList extends AppCompatActivity {
             // make a new row
             myView = inflater.inflate(R.layout.img_list_row, parent, false);
             // TODO: Add view holder pattern in
+
             //set text for new row
-            TextView tView = myView.findViewById(R.id.TextGoesHere);
-            tView.setText(elements.get(position).imgTitle);
+            TextView dateView = myView.findViewById(R.id.DateGoesHere);
+            dateView.setText(pictures.get(position).imgDate);
+            TextView urlView = myView.findViewById(R.id.TextGoesHere);
+            urlView.setText(pictures.get(position).imgURL);
 
             // return new row to be added to table
             return myView;

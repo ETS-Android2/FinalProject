@@ -11,9 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.google.android.material.snackbar.Snackbar;
-
 import java.util.ArrayList;
 
 /**
@@ -90,8 +88,6 @@ public class SavedList extends AppCompatActivity {
                 } );
 
         //TODO: Progress bar will be on async task
-        //TODO: Snackbar to give list details
-        //TODO: Onclick listener
     }
 
     /**

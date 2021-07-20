@@ -14,7 +14,13 @@ public class SpacePic {
     String imgDescription;
     String imgHDURL;
 
-
+    /**
+     * Space Pic class holds the saved images of the day and their associated data.
+     *
+     * @param imgDate - the date of the image
+     * @param imgURL - url to the image
+     * @param imgID - location in the pictures array
+     */
     public SpacePic(String imgDate, String imgURL, long imgID){
         // send in parameters from JSON and save them.
         this.imgDate = imgDate;
@@ -22,11 +28,19 @@ public class SpacePic {
         this.imgID = imgID;
     }
 
+    public void setTitle(String title){
+        this.imgTitle = title;
+    }
+
+    public void setDescription(String description){
+        this.imgDescription = description;
+    }
+
+    public void setHDURL(String hdurl){
+        this.imgHDURL = hdurl;
+    }
     // TODO: save title for the image
     // TODO: open HDURL in web browser
-    //Mod 3 Intents
-//    String url = "http://www.algonquincollege.com";
-//    Intent i = new Intent(Intent.ACTION_VIEW);
-//    i.setData( Uri.parse(url) );
-//    startActivity(i);
+    // TODO: DO we make variables private and use getter methods? Probably should
+
 }

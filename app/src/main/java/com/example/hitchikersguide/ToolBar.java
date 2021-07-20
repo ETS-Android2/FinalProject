@@ -5,17 +5,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationView;
 
+/**
+ * Toolbar holds the app's toolbar icons and the navigation drawer for implementation in the
+ * base activities
+ *
+ * @author Brianna Guerin
+ * @author Jenne Stamplecoskie
+ */
 public class ToolBar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    /**
+     * On Create Function initializes widgets and listeners
+     *
+     * @param savedInstanceState - the state that the app was last saved in
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +42,13 @@ public class ToolBar extends AppCompatActivity implements NavigationView.OnNavig
         // Jokes Page
     }
 
+    /**
+     * onCreate option menu
+     *
+     * @param menu
+     * @return
+     */
+    // TODO: Finish JavaDoc
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Inflater to inflate menu items in toolbar

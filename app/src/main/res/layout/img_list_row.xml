@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/comet" />
 
-    <EditText
-        android:id="@+id/editTextDate"
+    <TextView
+        android:id="@+id/DateGoesHere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="date" />

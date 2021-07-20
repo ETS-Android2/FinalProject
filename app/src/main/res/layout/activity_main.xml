@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/nightsky"
     tools:context=".MainActivity">
 
     <!-- App Logo -->
@@ -24,7 +25,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/don_t_panic"
-        android:textSize="30sp"
+        android:textColor="@color/hh_red"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:shadowColor="@color/hh_orange"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="1"
+        android:padding="12sp"
+        android:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/nightsky"
     tools:context=".MainActivity">
+    <include android:id="@+id/toolbar"
+        layout="@layout/activity_tool_bar"/>
 
     <!-- App Logo -->
     <ImageButton
@@ -18,6 +20,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToolBar"
+        app:layout_constraintLeft_toLeftOf="@id/AM_dontPanic"
+        app:layout_constraintTop_toBottomOf="@id/AM_dontPanic">
+    </Button>
 
     <!-- Takes you to Image Picker -->
     <Button

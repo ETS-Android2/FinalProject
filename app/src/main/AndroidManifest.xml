@@ -14,6 +14,7 @@
         <activity android:name=".SavedList" />
         <activity android:name=".ToolBar" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

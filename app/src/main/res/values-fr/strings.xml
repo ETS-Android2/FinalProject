@@ -15,4 +15,6 @@
     <string name="login">Entrer</string>
     <string name="user_name">Nom:</string>
     <string name="jokes_page">Blagues</string>
+    <string name="open">Ouvert</string>
+    <string name="close">Fermer</string>
 </resources>

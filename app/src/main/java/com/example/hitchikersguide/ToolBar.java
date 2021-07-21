@@ -1,10 +1,12 @@
 package com.example.hitchikersguide;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -35,6 +37,14 @@ public class ToolBar extends AppCompatActivity implements NavigationView.OnNavig
         Toolbar myToolbar = findViewById(R.id.toolbar);
         //Loads the toolbar, calls onCreateOptionsMenu
         setSupportActionBar(myToolbar);
+
+        DrawerLayout drawer = findViewById(R.id.drawer);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, myToolbar, R.string.open, R.string.close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.navigation);
+        navigationView.setNavigationItemSelectedListener(this);
 
         // Welcome Page (maybe)
         // Saved Pictures List
@@ -89,7 +99,6 @@ public class ToolBar extends AppCompatActivity implements NavigationView.OnNavig
         DrawerLayout drawerLayout = findViewById(R.id.drawer);
         drawerLayout.closeDrawer(GravityCompat.START);
 
-        //new Intents that direct to each activity
         Intent image = new Intent(this, ImageDisplay.class);
         Intent jokes = new Intent(this, Jokes.class);
         Intent saved = new Intent(this, SavedList.class);
@@ -98,16 +107,16 @@ public class ToolBar extends AppCompatActivity implements NavigationView.OnNavig
         //switch cases for toolbar icons, direct to each activity
         //depending on icon selected by user
         switch(item.getItemId()) {
-            case R.id.ufo:
+            case R.id.nav_image:
                 startActivity(image);
                 break;
-            case R.id.towel:
+            case R.id.nav_jokes:
                 startActivity(jokes);
                 break;
-            case R.id.comet:
+            case R.id.nav_saved:
                 startActivity(saved);
                 break;
-            case R.id.number:
+            case R.id.nav_main:
                 startActivity(main);
                 break;
         }

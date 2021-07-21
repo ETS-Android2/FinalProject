@@ -14,4 +14,6 @@
     <string name="login">Login</string>
     <string name="user_name">Name:</string>
     <string name="jokes_page">Jokes Page</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

@@ -3,6 +3,8 @@ package com.example.hitchikersguide;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +24,10 @@ import java.util.ArrayList;
  * @author Jenne Stamplecoskie
  */
 public class SavedList extends AppCompatActivity {
-    private ArrayList<SpacePic> pictures = new ArrayList<>(); // Messages
+    private ArrayList<SpacePic> pictures = new ArrayList<>();
+    private SQLiteDatabase myDB;
+    private Cursor results;
+    private SpacePic curPic;
 
     /**
      * On Create Function initializes widgets and listeners
@@ -50,7 +55,7 @@ public class SavedList extends AppCompatActivity {
         // TODO: Remove once we have a proper list of saved images
         SpacePic pic;
         for ( int i = 1; i <= 8; i++ ){
-            pic = new SpacePic("date" + i, "url" + i, i);
+            pic = new SpacePic(i, "date" + i, "url" + i);
             pictures.add(pic);
         }
 
@@ -88,6 +93,48 @@ public class SavedList extends AppCompatActivity {
                 } );
 
         //TODO: Progress bar will be on async task
+
+        // Load data from the database
+        loadSavedPics();
+    }
+
+    private void loadSavedPics() {
+        // Connect to DB
+        MyDBOpener dbOpen = new MyDBOpener(this);
+        myDB = dbOpen.getWritableDatabase();
+
+        // list of columns
+//        protected final static String DATABASE_NAME = "mySpacePics";
+//        protected final static int VERSION_NUM = 1;
+//        public final static String TABLE_NAME = "SPACE_PIC";
+//        public final static String COL_ID = "PicID";
+//        public final static String COL_DATE = "PicDate";
+//        public final static String COL_URL = "PicURL";
+//        public final static String COL_HDURL = "PicHDURL";
+//        public final static String COL_TITLE = "PicTitle";
+//        public final static String COL_DETAIL = "PicDetail";
+        String[] columns = {MyDBOpener.COL_ID, MyDBOpener.COL_DATE, MyDBOpener.COL_URL,
+                            MyDBOpener.COL_HDURL, MyDBOpener.COL_TITLE, MyDBOpener.COL_DETAIL};
+        // get all entries
+        results = myDB.query(false, MyDBOpener.TABLE_NAME, columns, null,
+                null, null, null, null, null);
+
+        // Get column indices
+        int idColIdx = results.getColumnIndex(MyDBOpener.COL_ID);
+        int dateColIdx = results.getColumnIndex(MyDBOpener.COL_DATE);
+        int urlColIdx = results.getColumnIndex(MyDBOpener.COL_URL);
+        int hdurlColIdx = results.getColumnIndex(MyDBOpener.COL_HDURL);
+        int titleColIdx = results.getColumnIndex(MyDBOpener.COL_TITLE);
+        int detailColIdx = results.getColumnIndex(MyDBOpener.COL_DETAIL);
+
+
+        // Iterate over the results, return true if there is a next item:
+        while (results.moveToNext()) {
+            // Create a message and add it to the arrayList
+            curPic = new SpacePic(results.getLong(idColIdx), results.getString(dateColIdx),
+                    results.getString(urlColIdx));
+            pictures.add(curPic);
+        }
     }
 
     /**
@@ -116,8 +163,10 @@ public class SavedList extends AppCompatActivity {
             LayoutInflater inflater = getLayoutInflater();
 
             // make a new row
-            myView = inflater.inflate(R.layout.img_list_row, parent, false);
-            // TODO: Add view holder pattern in
+//            if (myView == null) {
+                myView = inflater.inflate(R.layout.img_list_row, parent, false);
+//            }
+            // TODO: Add view holder pattern in note need to write code to account for delete if I use this
 
             //set text for new row
             TextView dateView = myView.findViewById(R.id.DateGoesHere);

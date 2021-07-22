@@ -55,7 +55,10 @@ public class SavedList extends AppCompatActivity {
         // TODO: Remove once we have a proper list of saved images
         SpacePic pic;
         for ( int i = 1; i <= 8; i++ ){
-            pic = new SpacePic(i, "date" + i, "url" + i);
+            pic = new SpacePic(i, "date" + i, "www.spacepics" + i + ".com");
+            pic.setTitle("Title" + i);
+            pic.setDetails("A description might go here...");
+            pic.setHDURL("www.spacepicsInHighDef" + i + ".com");
             pictures.add(pic);
         }
 
@@ -104,15 +107,6 @@ public class SavedList extends AppCompatActivity {
         myDB = dbOpen.getWritableDatabase();
 
         // list of columns
-//        protected final static String DATABASE_NAME = "mySpacePics";
-//        protected final static int VERSION_NUM = 1;
-//        public final static String TABLE_NAME = "SPACE_PIC";
-//        public final static String COL_ID = "PicID";
-//        public final static String COL_DATE = "PicDate";
-//        public final static String COL_URL = "PicURL";
-//        public final static String COL_HDURL = "PicHDURL";
-//        public final static String COL_TITLE = "PicTitle";
-//        public final static String COL_DETAIL = "PicDetail";
         String[] columns = {MyDBOpener.COL_ID, MyDBOpener.COL_DATE, MyDBOpener.COL_URL,
                             MyDBOpener.COL_HDURL, MyDBOpener.COL_TITLE, MyDBOpener.COL_DETAIL};
         // get all entries
@@ -130,9 +124,13 @@ public class SavedList extends AppCompatActivity {
 
         // Iterate over the results, return true if there is a next item:
         while (results.moveToNext()) {
-            // Create a message and add it to the arrayList
+            // Create an image and add it to the arrayList
             curPic = new SpacePic(results.getLong(idColIdx), results.getString(dateColIdx),
                     results.getString(urlColIdx));
+            //TODO: Might need to check if these are empty... but should be ok
+            curPic.setHDURL(results.getString(hdurlColIdx));
+            curPic.setTitle(results.getString(titleColIdx));
+            curPic.setDetails(results.getString(detailColIdx));
             pictures.add(curPic);
         }
     }
@@ -169,10 +167,20 @@ public class SavedList extends AppCompatActivity {
             // TODO: Add view holder pattern in note need to write code to account for delete if I use this
 
             //set text for new row
-            TextView dateView = myView.findViewById(R.id.DateGoesHere);
+            TextView dateView = myView.findViewById(R.id.IL_Date);
             dateView.setText(pictures.get(position).imgDate);
-            TextView urlView = myView.findViewById(R.id.TextGoesHere);
+
+            TextView urlView = myView.findViewById(R.id.IL_URL);
             urlView.setText(pictures.get(position).imgURL);
+
+            TextView titleView = myView.findViewById(R.id.IL_Title);
+            titleView.setText(pictures.get(position).imgTitle);
+
+            TextView hdurlView = myView.findViewById(R.id.IL_HDURL);
+            hdurlView.setText(pictures.get(position).imgHDURL);
+
+            TextView detailsView = myView.findViewById(R.id.IL_Details);
+            detailsView.setText(pictures.get(position).imgDetails);
 
             // return new row to be added to table
             return myView;

@@ -7,9 +7,9 @@ package com.example.hitchikersguide;
  * @author Jenne Stamplecoskie
  */
 public class SpacePic {
+    long   imgID;
     String imgDate;
     String imgURL;
-    long imgID;
     String imgTitle;
     String imgDetails;
     String imgHDURL;

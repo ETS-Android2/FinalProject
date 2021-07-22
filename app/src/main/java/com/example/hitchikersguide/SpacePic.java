@@ -7,11 +7,11 @@ package com.example.hitchikersguide;
  * @author Jenne Stamplecoskie
  */
 public class SpacePic {
+    long   imgID;
     String imgDate;
     String imgURL;
-    long imgID;
     String imgTitle;
-    String imgDescription;
+    String imgDetails;
     String imgHDURL;
 
     /**
@@ -21,7 +21,7 @@ public class SpacePic {
      * @param imgURL - url to the image
      * @param imgID - location in the pictures array
      */
-    public SpacePic(String imgDate, String imgURL, long imgID){
+    public SpacePic(long imgID, String imgDate, String imgURL){
         // send in parameters from JSON and save them.
         this.imgDate = imgDate;
         this.imgURL = imgURL;
@@ -32,8 +32,8 @@ public class SpacePic {
         this.imgTitle = title;
     }
 
-    public void setDescription(String description){
-        this.imgDescription = description;
+    public void setDetails(String details){
+        this.imgDetails = details;
     }
 
     public void setHDURL(String hdurl){

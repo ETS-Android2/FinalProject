@@ -14,7 +14,7 @@ import android.widget.Toast;
  */
 public class Jokes extends AppCompatActivity {
     TextView textView;
-    Button button;
+    Button jkButton;
 
     /**
      * On Create Function initializes widgets and listeners
@@ -26,11 +26,12 @@ public class Jokes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jokes);
 
-        textView = findViewById(R.id.textView);
-        button = findViewById(R.id.button);
+        textView = findViewById(R.id.JK_textView);
+        jkButton = findViewById(R.id.JK_button);
 
-        button.setOnClickListener(click -> {
-                    Toast.makeText(this, "This will display the answer to a joke.", Toast.LENGTH_LONG).show();
+        jkButton.setOnClickListener(click -> {
+                    Toast.makeText(this, "This will display the answer to a joke.",
+                            Toast.LENGTH_LONG).show();
                 });
 
         //TODO: Toast with the answer when you hit the button

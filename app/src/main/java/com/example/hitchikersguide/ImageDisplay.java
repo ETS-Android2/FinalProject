@@ -2,13 +2,20 @@ package com.example.hitchikersguide;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DialogFragment;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
@@ -29,7 +36,9 @@ import java.net.URL;
 public class ImageDisplay extends AppCompatActivity {
     ProgressBar progressBar;
     TextView curDate, curTitle, curURL, curHDURL, curDetails;
-//    ImageView curImage;
+//    String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;
+    String newDate = "2021-07-01";
+    ImageView curImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +46,25 @@ public class ImageDisplay extends AppCompatActivity {
         setContentView(R.layout.activity_image_display);
         // TODO: Image, Image Description, Date, Link to HDURL
         // TODO: Snackbar to say are you sure you want to leave this page to open the HDURL
+
+        // Initialize Date Picker
+        DatePicker picker;
+        picker = findViewById(R.id.ID_datePicker);
+        Button dateButton = findViewById(R.id.ID_PickDate);
+        dateButton.setOnClickListener(click -> {
+
+//            MyDatePicker dateDialog = new MyDatePicker();
+//            dateDialog.show(getSupportFragmentManager(), "datePicker");
+            newDate = picker.getYear() + "-" + (picker.getMonth() + 1 )+ "-" + picker.getDayOfMonth();
+            Log.i("DatePicker: ", "date selected is: " + newDate);
+
+            // Open AsyncTask
+            String picADayURL = "https://api.nasa.gov/planetary/apod?api_key=DU59VMplWgJa1xFzZbTuMZgLkdcVeoZkJZu21esv&date=" + newDate;
+            NASAQuery getImageDetails = new NASAQuery();
+            getImageDetails.execute(picADayURL);
+//            Picasso.get().load(imgURL).into(curImage);
+
+        });
 
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
@@ -55,11 +83,13 @@ public class ImageDisplay extends AppCompatActivity {
         curURL = findViewById(R.id.ID_Url);
         curHDURL = findViewById(R.id.ID_HDurl);
         curDetails = findViewById(R.id.ID_Detail);
+        curImage = findViewById(R.id.ID_imageView);
 
         // Open AsyncTask
-        String picADayURL = "https://api.nasa.gov/planetary/apod?api_key=DU59VMplWgJa1xFzZbTuMZgLkdcVeoZkJZu21esv&date=" + date;
+        String picADayURL = "https://api.nasa.gov/planetary/apod?api_key=DU59VMplWgJa1xFzZbTuMZgLkdcVeoZkJZu21esv&date=" + newDate;
         NASAQuery forecast = new NASAQuery();
         forecast.execute(picADayURL);
+//        Picasso.get().load(imgURL).into(curImage);
     }
 
     private class NASAQuery extends AsyncTask<String, Integer, String> {
@@ -105,6 +135,11 @@ public class ImageDisplay extends AppCompatActivity {
                 Log.e("Error", e.getMessage());
             } // end first try block
 
+//
+
+//TODO: Update progress bars
+            //TODO: error coding for when not a picture
+            //TODO: remove URL from display
 //            publishProgress(25);
 //            minTemp = "Low: " + xpp.getAttributeValue(null, "min")
 //                    + " \u2103";
@@ -126,16 +161,13 @@ public class ImageDisplay extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            Picasso.get().load(imgURL).into(curImage);
+//            curImage.setImageBitmap(myPic);
             curDate.setText(imgDate);
             curTitle.setText(imgTitle);
             curURL.setText(imgURL);
             curHDURL.setText(imgHDURL);
             curDetails.setText(imgDetails);
-//            currTV.setText(currTemp);
-//            minTV.setText(minTemp);
-//            maxTV.setText(maxTemp);
-//            wxIcon.setImageBitmap(wxPic);
-//            uvRate.setText(UVRating);
             progressBar.setVisibility(View.INVISIBLE);
         }
     }

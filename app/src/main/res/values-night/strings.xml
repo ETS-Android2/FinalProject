@@ -10,4 +10,5 @@
     <string name="login">Login</string>
     <string name="user_name">Name:</string>
     <string name="jokes_page">Jokes Page</string>
+    <string name="save_image">Save Image</string>
 </resources>

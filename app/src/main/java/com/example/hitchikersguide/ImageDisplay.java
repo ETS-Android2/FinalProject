@@ -3,6 +3,7 @@ package com.example.hitchikersguide;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -39,6 +40,7 @@ public class ImageDisplay extends AppCompatActivity {
 //    String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;
     String newDate = "2021-07-01";
     ImageView curImage;
+    String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,18 @@ public class ImageDisplay extends AppCompatActivity {
         // Initialize Date Picker
         DatePicker picker;
         picker = findViewById(R.id.ID_datePicker);
+
+        Button saveImage = findViewById(R.id.ID_SaveImage);
+        Intent passImg = new Intent(getBaseContext(), SavedList.class);
+        saveImage.setOnClickListener(click -> {
+            passImg.putExtra("Date", imgDate);
+            passImg.putExtra("Title", imgTitle);
+            passImg.putExtra("URL", imgURL);
+            passImg.putExtra("HDURL", imgHDURL);
+            passImg.putExtra("Details", imgDetails);
+            startActivity(passImg);
+        });
+
         Button dateButton = findViewById(R.id.ID_PickDate);
         dateButton.setOnClickListener(click -> {
 
@@ -94,7 +108,6 @@ public class ImageDisplay extends AppCompatActivity {
 
     private class NASAQuery extends AsyncTask<String, Integer, String> {
         Bitmap myPic;
-        String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;
 
         @Override
         protected String doInBackground(String... args){

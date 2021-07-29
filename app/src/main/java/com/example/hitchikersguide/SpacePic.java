@@ -28,16 +28,31 @@ public class SpacePic {
         this.imgID = imgID;
     }
 
+    public SpacePic(String imgDate, String imgTitle, String imgURL, String imgHDURL, String imgDetails) {
+        this.imgDate = imgDate;
+        this.imgURL = imgURL;
+        this.imgTitle = imgTitle;
+        this.imgDetails = imgDetails;
+        this.imgHDURL = imgHDURL;
+    }
+
     public void setTitle(String title){
+
         this.imgTitle = title;
     }
 
     public void setDetails(String details){
+
         this.imgDetails = details;
     }
 
     public void setHDURL(String hdurl){
+
         this.imgHDURL = hdurl;
+    }
+
+    public long getImgID() {
+        return imgID;
     }
     // TODO: save title for the image
     // TODO: open HDURL in web browser

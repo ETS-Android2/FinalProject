@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <ImageView
         android:id="@+id/IL_preview"
         android:layout_width="wrap_content"
@@ -15,15 +16,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:textAlignment="textStart"
-        android:layout_marginStart="5sp"
-        android:text="Title"
-        />
+        android:layout_marginStart="5sp" />
+
     <TextView
         android:id="@+id/IL_Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:text="2021-07-21"/>
+        android:inputType="date" />
 
     <TextView
         android:id="@+id/IL_URL"
@@ -31,9 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:textAlignment="textStart"
-        android:layout_marginStart="5sp"
-        android:text="www.someplace1.com"
-        />
+        android:layout_marginStart="5sp" />
 
     <TextView
         android:id="@+id/IL_Details"
@@ -41,7 +38,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="5sp"
-        android:text="Description is a longer bit of text that takes up quite a bit more space. Its more like a paragraph..."
         android:textAlignment="textStart" />
 
     <TextView
@@ -51,8 +47,7 @@
         android:layout_gravity="start"
         android:textAlignment="textStart"
         android:layout_marginStart="5sp"
-        android:text="www.someplaceHD.com"
-        />
+        android:autoLink="web" />
 
     <!--    //android:background="@drawable/turtle_speech"-->
 <!--    //android:textColor="@color/black"-->

@@ -30,7 +30,6 @@
         android:id="@+id/ID_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ID_imageView" />
@@ -39,7 +38,6 @@
         android:id="@+id/ID_Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ID_Title" />
@@ -48,7 +46,6 @@
         android:id="@+id/ID_Url"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="URL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ID_Date" />
@@ -57,7 +54,7 @@
         android:id="@+id/ID_HDurl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="URL"
+        android:autoLink="web"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ID_Url" />
@@ -66,7 +63,6 @@
         android:id="@+id/ID_Detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="URL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ID_HDurl" />
@@ -85,7 +81,7 @@
         android:id="@+id/ID_PickDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pick an Image"
+        android:text="@string/ID_PickImage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 

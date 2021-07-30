@@ -32,6 +32,7 @@ public class SavedList extends AppCompatActivity {
     private SpacePic curPic;
     String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;
     SpacePic pic;
+    static boolean isTablet;
 
     /**
      * On Create Function initializes widgets and listeners
@@ -42,6 +43,8 @@ public class SavedList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saved_list);
+
+        isTablet = findViewById(R.id.fragmentLocation) != null;
 
         TextView listTitle = findViewById(R.id.IL_Title);
         TextView listDate = findViewById(R.id.IL_Date);
@@ -99,10 +102,25 @@ public class SavedList extends AppCompatActivity {
 
         // Get details of an item on the list
         imgList.setOnItemClickListener((parent, view, position, id) -> {
-            String details = "image date: " + pictures.get(position).imgDate +
-                    " url: " + pictures.get(position).imgURL + " ID: " +
-                    pictures.get(position).imgID;
-            Snackbar.make(imgList, details, Snackbar.LENGTH_LONG).show();
+
+            Bundle dataToPass = new Bundle();
+            dataToPass.putString("Title", pictures.get(position).imgTitle);
+            dataToPass.putString("Details", pictures.get(position).imgDetails);
+            dataToPass.putString("HDURL", pictures.get(position).imgHDURL);
+
+            if (isTablet) {
+                DetailsFragment dFragment = new DetailsFragment();
+                dFragment.setArguments(dataToPass);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentLocation, dFragment).commit();
+            }
+            else {
+                Intent activityEM = new Intent(this, EmptyActivity.class);
+                startActivity(activityEM);
+            }
+//            String details = "image date: " + pictures.get(position).imgDate +
+//                    " url: " + pictures.get(position).imgURL + " ID: " +
+//                    pictures.get(position).imgID;
+//            Snackbar.make(imgList, details, Snackbar.LENGTH_LONG).show();
         });
 
         // Remove an item from the list
@@ -122,6 +140,9 @@ public class SavedList extends AppCompatActivity {
                                 pictures.remove(position);
                                 deleteSpacePic(pic);
                                 myAdapter.notifyDataSetChanged();
+                                if (isTablet) {
+                                    this.getSupportFragmentManager().beginTransaction().remove(getSupportFragmentManager().findFragmentById(R.id.fragmentLocation)).commit();
+                                }
                             })
 
                             // No action
@@ -219,11 +240,11 @@ public class SavedList extends AppCompatActivity {
             TextView titleView = myView.findViewById(R.id.IL_Title);
             titleView.setText(pictures.get(position).imgTitle);
 
-            TextView hdurlView = myView.findViewById(R.id.IL_HDURL);
-            hdurlView.setText(pictures.get(position).imgHDURL);
-
-            TextView detailsView = myView.findViewById(R.id.IL_Details);
-            detailsView.setText(pictures.get(position).imgDetails);
+//            TextView hdurlView = myView.findViewById(R.id.IL_HDURL);
+//            hdurlView.setText(pictures.get(position).imgHDURL);
+//
+//            TextView detailsView = myView.findViewById(R.id.IL_Details);
+//            detailsView.setText(pictures.get(position).imgDetails);
 
             // return new row to be added to table
             return myView;

@@ -19,4 +19,6 @@
     <string name="close">Fermer</string>
     <string name="save_image">Enregistrer l\'image</string>
     <string name="ID_PickImage">Choisissez une image</string>
+    <string name="FD_Hide">CACHER</string>
+    <string name="dismiss">REJETER</string>
 </resources>

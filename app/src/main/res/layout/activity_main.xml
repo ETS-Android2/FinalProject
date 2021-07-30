@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/nightsky"
     tools:context=".MainActivity">
-    <include android:id="@+id/toolbar"
+    <include android:id="@+id/toolbar_layout"
         layout="@layout/activity_tool_bar"/>
 
     <!-- App Logo -->

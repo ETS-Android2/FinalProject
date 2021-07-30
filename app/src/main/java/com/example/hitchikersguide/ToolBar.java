@@ -34,7 +34,7 @@ public class ToolBar extends AppCompatActivity implements NavigationView.OnNavig
         setContentView(R.layout.activity_tool_bar);
 
         //Get toolbar from layout
-        Toolbar myToolbar = findViewById(R.id.toolbar);
+        Toolbar myToolbar = findViewById(R.id.toolbar_layout);
         //Loads the toolbar, calls onCreateOptionsMenu
         setSupportActionBar(myToolbar);
 

@@ -15,22 +15,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:textAlignment="textStart"
-        android:layout_marginStart="5sp" />
+        android:layout_marginStart="5sp"
+        android:gravity="center_horizontal"/>
 
     <TextView
         android:id="@+id/IL_Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="date" />
+        android:inputType="date"
+        android:gravity="center_horizontal"/>
 
     <TextView
         android:id="@+id/IL_URL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:textAlignment="textStart"
-        android:layout_marginStart="5sp" />
+        android:layout_marginStart="5sp"
+        android:gravity="center_horizontal"/>
 
     <TextView
         android:id="@+id/IL_Details"

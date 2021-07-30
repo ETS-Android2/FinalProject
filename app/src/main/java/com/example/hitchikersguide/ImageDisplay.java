@@ -2,7 +2,9 @@ package com.example.hitchikersguide;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,7 +17,9 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
@@ -95,8 +99,14 @@ public class ImageDisplay extends AppCompatActivity {
         curTitle = findViewById(R.id.ID_Title);
         curURL = findViewById(R.id.ID_Url);
         curHDURL = findViewById(R.id.ID_HDurl);
-        curDetails = findViewById(R.id.ID_Detail);
+//        curDetails = findViewById(R.id.ID_Detail);
         curImage = findViewById(R.id.ID_imageView);
+        curImage.setOnClickListener(v -> {
+            AlertDialog.Builder details = new AlertDialog.Builder(this);
+            details.setMessage(imgDetails)
+                    .setNegativeButton(R.string.dismiss, (click, arg) -> { })
+                    .create().show();
+        });
 
         // Open AsyncTask
         String picADayURL = "https://api.nasa.gov/planetary/apod?api_key=DU59VMplWgJa1xFzZbTuMZgLkdcVeoZkJZu21esv&date=" + newDate;
@@ -179,7 +189,7 @@ public class ImageDisplay extends AppCompatActivity {
             curTitle.setText(imgTitle);
             curURL.setText(imgURL);
             curHDURL.setText(imgHDURL);
-            curDetails.setText(imgDetails);
+//            curDetails.setText(imgDetails);
             progressBar.setVisibility(View.INVISIBLE);
         }
     }

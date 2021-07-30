@@ -37,7 +37,6 @@ import java.net.URL;
 public class ImageDisplay extends AppCompatActivity {
     ProgressBar progressBar;
     TextView curDate, curTitle, curURL, curHDURL, curDetails;
-//    String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;
     String newDate = "2021-07-01";
     ImageView curImage;
     String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;

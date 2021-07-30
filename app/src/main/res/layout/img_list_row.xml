@@ -46,8 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:textAlignment="textStart"
-        android:layout_marginStart="5sp"
-        android:autoLink="web" />
+        android:layout_marginStart="5sp" />
 
     <!--    //android:background="@drawable/turtle_speech"-->
 <!--    //android:textColor="@color/black"-->

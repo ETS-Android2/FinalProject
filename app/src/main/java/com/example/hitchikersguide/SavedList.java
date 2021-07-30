@@ -115,6 +115,7 @@ public class SavedList extends AppCompatActivity {
             }
             else {
                 Intent activityEM = new Intent(this, EmptyActivity.class);
+                activityEM.putExtras(dataToPass);
                 startActivity(activityEM);
             }
 //            String details = "image date: " + pictures.get(position).imgDate +

@@ -1,6 +1,7 @@
 package com.example.hitchikersguide;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.content.Intent;
@@ -31,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent activityTB = new Intent(this, ToolBar.class);
+        Button tb = findViewById(R.id.tb);
+        tb.setOnClickListener(click -> startActivity(activityTB));
 
         // Define Next Activity
         Intent activitySL = new Intent(this, SavedList.class);

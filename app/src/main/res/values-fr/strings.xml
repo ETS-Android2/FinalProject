@@ -15,4 +15,10 @@
     <string name="login">Entrer</string>
     <string name="user_name">Nom:</string>
     <string name="jokes_page">Blagues</string>
+    <string name="open">Ouvert</string>
+    <string name="close">Fermer</string>
+    <string name="save_image">Enregistrer l\'image</string>
+    <string name="ID_PickImage">Choisissez une image</string>
+    <string name="FD_Hide">CACHER</string>
+    <string name="dismiss">REJETER</string>
 </resources>

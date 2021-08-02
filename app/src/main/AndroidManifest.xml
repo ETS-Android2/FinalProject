@@ -2,14 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hitchikersguide">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_logo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HitchikersGuide">
-        <activity android:name=".ImageDisplay"></activity>
+        android:theme="@style/Theme.HitchikersGuide"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".EmptyActivity"></activity>
+        <activity android:name=".ImageDisplay" />
         <activity android:name=".Jokes" />
         <activity android:name=".SavedList" />
         <activity android:name=".ToolBar" />

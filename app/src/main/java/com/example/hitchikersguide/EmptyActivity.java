@@ -4,6 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/**
+ * The empty activity class is used for holding the fragment_details layout.
+ * It shows the description of the image selected.
+ * The image description provided was long enough that it required a complete screen to display.
+ *
+ * @author Brianna Guerin
+ * @author Jenne Stamplecoskie
+ *
+ */
 public class EmptyActivity extends AppCompatActivity {
 
     @Override

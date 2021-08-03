@@ -16,6 +16,7 @@ import android.widget.TextView;
  * Provides a place for the user to enter their login name
  * Links to image list through the Logo
  * Links to date picker through the don't panic button
+ * Temporarily links to toolbar through toolbar button
  *
  * @author Brianna Guerin
  * @author Jenne Stamplecoskie

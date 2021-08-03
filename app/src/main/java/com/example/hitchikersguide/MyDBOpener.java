@@ -4,6 +4,16 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * MyDBOpener extends SQLiteOpenHelper.
+ * It provides the database format for storing the SpacePic objects.
+ * There is one table with a column for each parameter of the SpacePic Object.
+ * Current Version is 1.
+ *
+ * @author Brianna Guerin
+ * @author Jenne Stamplecoskie
+ *
+ */
 public class MyDBOpener extends SQLiteOpenHelper {
     protected final static String DATABASE_NAME = "mySpacePics";
     protected final static int VERSION_NUM = 1;

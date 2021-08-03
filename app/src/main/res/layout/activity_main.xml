@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/nightsky"
     tools:context=".MainActivity">
-    <include android:id="@+id/toolbar_layout"
-        layout="@layout/activity_tool_bar"/>
+    <!--    android:background="@drawable/nightsky"-->
+
+    <include
+        android:id="@+id/toolbar_layout"
+        layout="@layout/activity_tool_bar" />
 
     <!-- App Logo -->
     <ImageButton
@@ -21,48 +23,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/tb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ToolBar"
-        app:layout_constraintLeft_toLeftOf="@id/AM_dontPanic"
-        app:layout_constraintTop_toBottomOf="@id/AM_dontPanic">
-    </Button>
-
     <!-- Takes you to Image Picker -->
     <Button
         android:id="@+id/AM_dontPanic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/hh_blue"
+        android:padding="18sp"
+        android:shadowColor="@color/hh_orange"
+        android:shadowRadius="1"
         android:text="@string/don_t_panic"
         android:textColor="@color/hh_red"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:shadowColor="@color/hh_orange"
-        android:shadowDx="2"
-        android:shadowDy="2"
-        android:shadowRadius="1"
-        android:padding="12sp"
-        android:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AM_imageButton"
         app:layout_constraintVertical_bias="0.321" />
+    <!--    android:shadowDx="2"-->
+    <!--    android:shadowDy="2"-->
 
     <!-- Label for Name -->
     <TextView
         android:id="@+id/AM_labelForName"
-        android:labelFor="@id/AM_enterName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:labelFor="@id/AM_enterName"
+        android:layout_marginLeft="12dp"
+        android:paddingLeft="6dp"
         android:text="@string/user_name"
         android:textColor="@color/hh_orange"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/AM_enterName"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Enter Your Name -->
     <EditText
@@ -72,9 +66,18 @@
         android:autofillHints="Username"
         android:inputType="textPersonName"
         android:textColor="@color/hh_orange"
-        app:layout_constraintStart_toEndOf="@id/AM_labelForName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/AM_saveLogin" />
+        app:layout_constraintEnd_toStartOf="@+id/AM_saveLogin"
+        app:layout_constraintStart_toEndOf="@id/AM_labelForName" />
+
+    <!-- Temporary to access toolbar -->
+    <Button
+        android:id="@+id/tb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToolBar"
+        app:layout_constraintBottom_toTopOf="@id/AM_saveLogin"
+        app:layout_constraintEnd_toEndOf="parent"></Button>
 
     <!-- Store Name in Shared Preferences -->
     <Button
@@ -82,8 +85,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        app:layout_constraintStart_toEndOf="@id/AM_enterName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/AM_enterName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

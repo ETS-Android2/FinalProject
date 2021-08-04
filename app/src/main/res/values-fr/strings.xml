@@ -21,4 +21,6 @@
     <string name="ID_PickImage">Choisissez une image</string>
     <string name="FD_Hide">CACHER</string>
     <string name="dismiss">REJETER</string>
+    <string name="JK_getjoke">Raconte moi une blague</string>
+    <string name="JK_answer">Obtenez une réponse</string>
 </resources>

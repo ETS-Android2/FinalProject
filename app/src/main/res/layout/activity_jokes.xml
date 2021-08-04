@@ -6,21 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".Jokes">
 
+    <Button
+        android:id="@+id/JK_getjoke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/JK_getjoke"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
     <TextView
         android:id="@+id/JK_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Joke"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="128dp"
         android:textSize="30dp"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="126dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/JK_getjoke"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:id="@+id/JK_button"
+        android:id="@+id/JK_answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/JK_answer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
         android:text="Get Answer"
         tools:layout_editor_absoluteX="181dp"
         tools:layout_editor_absoluteY="252dp"
@@ -29,4 +41,5 @@
 
     <include
         layout="@layout/activity_tool_bar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

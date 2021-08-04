@@ -1,5 +1,12 @@
 package com.example.hitchikersguide;
 
+import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+
 /**
  * Class to define the Space Picture Object
  *

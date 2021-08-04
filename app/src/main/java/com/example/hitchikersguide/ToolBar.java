@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+
 import com.google.android.material.navigation.NavigationView;
 
 /**
@@ -22,7 +24,6 @@ import com.google.android.material.navigation.NavigationView;
  * @author Jenne Stamplecoskie
  */
 public class ToolBar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
     /**
      * On Create Function initializes widgets and listeners
      *
@@ -34,7 +35,7 @@ public class ToolBar extends AppCompatActivity implements NavigationView.OnNavig
         setContentView(R.layout.activity_tool_bar);
 
         //Get toolbar from layout
-        Toolbar myToolbar = findViewById(R.id.toolbar_layout);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
         //Loads the toolbar, calls onCreateOptionsMenu
         setSupportActionBar(myToolbar);
 

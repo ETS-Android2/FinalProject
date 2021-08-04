@@ -7,10 +7,6 @@
     tools:context=".MainActivity">
     <!--    android:background="@drawable/nightsky"-->
 
-<!--    <include-->
-<!--        android:id="@+id/toolbar_layout"-->
-<!--        layout="@layout/activity_tool_bar" />-->
-
     <!-- App Logo -->
     <ImageButton
         android:id="@+id/AM_imageButton"
@@ -71,13 +67,13 @@
         app:layout_constraintStart_toEndOf="@id/AM_labelForName" />
 
     <!-- Temporary to access toolbar -->
-    <Button
-        android:id="@+id/tb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ToolBar"
-        app:layout_constraintBottom_toTopOf="@id/AM_saveLogin"
-        app:layout_constraintEnd_toEndOf="parent"></Button>
+<!--    <Button-->
+<!--        android:id="@+id/tb"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="ToolBar"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/AM_saveLogin"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"></Button>-->
 
     <!-- Store Name in Shared Preferences -->
     <Button
@@ -88,5 +84,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/AM_enterName" />
+
+    <include
+        layout="@layout/activity_tool_bar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,15 +1,24 @@
 package com.example.hitchikersguide;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.google.android.material.navigation.NavigationView;
 
 /**
  * Main Activity is the first activity loaded for the Hitchhiker's Guide APP
@@ -21,7 +30,7 @@ import android.widget.TextView;
  * @author Brianna Guerin
  * @author Jenne Stamplecoskie
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private SharedPreferences prefs;
 
     /**
@@ -34,9 +43,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent activityTB = new Intent(this, ToolBar.class);
-        Button tb = findViewById(R.id.tb);
-        tb.setOnClickListener(click -> startActivity(activityTB));
+//        // Toolbar button
+//        Intent activityTB = new Intent(this, ToolBar.class);
+//        Button tbButton = findViewById(R.id.tb);
+//        tbButton.setOnClickListener(click -> startActivity(activityTB));
 
         // Define Next Activity
         Intent activitySL = new Intent(this, SavedList.class);
@@ -65,8 +75,21 @@ public class MainActivity extends AppCompatActivity {
         // Load the sharedPreferences
         prefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         String loginName = prefs.getString(parName, "");
-
         panicButton.setText(String.format(getString(R.string.don_t_panic), loginName));
+
+        // Toolbar as action bar
+        Toolbar tb = findViewById(R.id.toolbar);
+        setSupportActionBar(tb);
+
+        DrawerLayout drawer = findViewById(R.id.drawer);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, tb, R.string.open, R.string.close);
+        drawer.addDrawerListener(toggle);
+        drawer.bringToFront();
+        toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.navigation);
+        navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     /**
@@ -82,4 +105,69 @@ public class MainActivity extends AppCompatActivity {
     }
     // TODO: Add Toolbar and Nav drawer
     // TODO: Background sb black, maybe with starts, text and buttons adjusted appropriately.
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //Inflater to inflate menu items in toolbar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_layout, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //new Intents that direct to each activity
+        Intent image = new Intent(this, ImageDisplay.class);
+        Intent jokes = new Intent(this, Jokes.class);
+        Intent saved = new Intent(this, SavedList.class);
+        Intent main = new Intent(this, MainActivity.class);
+
+        //switch cases for toolbar icons, direct to each activity
+        //depending on icon selected by user
+        switch(item.getItemId()) {
+            case R.id.ufo:
+                startActivity(image);
+                break;
+            case R.id.towel:
+                startActivity(jokes);
+                break;
+            case R.id.comet:
+                startActivity(saved);
+                break;
+            case R.id.number:
+                startActivity(main);
+                break;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        DrawerLayout drawerLayout = findViewById(R.id.drawer);
+        drawerLayout.closeDrawer(GravityCompat.START);
+
+        Intent image = new Intent(this, ImageDisplay.class);
+        Intent jokes = new Intent(this, Jokes.class);
+        Intent saved = new Intent(this, SavedList.class);
+        Intent main = new Intent(this, MainActivity.class);
+
+        //switch cases for toolbar icons, direct to each activity
+        //depending on icon selected by user
+        switch(item.getItemId()) {
+            case R.id.nav_image:
+                startActivity(image);
+                break;
+            case R.id.nav_jokes:
+                startActivity(jokes);
+                break;
+            case R.id.nav_saved:
+                startActivity(saved);
+                break;
+            case R.id.nav_main:
+                startActivity(main);
+                break;
+        }
+
+        return false;
+    }
 }

@@ -7,9 +7,9 @@
     tools:context=".MainActivity">
     <!--    android:background="@drawable/nightsky"-->
 
-    <include
-        android:id="@+id/toolbar_layout"
-        layout="@layout/activity_tool_bar" />
+<!--    <include-->
+<!--        android:id="@+id/toolbar_layout"-->
+<!--        layout="@layout/activity_tool_bar" />-->
 
     <!-- App Logo -->
     <ImageButton

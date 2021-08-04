@@ -14,4 +14,6 @@
     <string name="ID_PickImage">Pick An Image</string>
     <string name="FD_Hide">HIDE</string>
     <string name="dismiss">DISMISS</string>
+    <string name="JK_getjoke">Tell Me A Joke</string>
+    <string name="JK_answer">Get Answer</string>
 </resources>

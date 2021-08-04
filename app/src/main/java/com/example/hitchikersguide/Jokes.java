@@ -60,7 +60,7 @@ public class Jokes extends AppCompatActivity {
 
         JKgetjoke.setOnClickListener(click -> {
             Random rand = new Random();
-            int max = 19;
+            int max = 18;
             int num = rand.nextInt(max);
 
             JKshowjoke.setText(jokes[num][0]);

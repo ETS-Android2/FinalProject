@@ -1,7 +1,9 @@
 package com.example.hitchikersguide;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -9,6 +11,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -158,6 +163,9 @@ public class SavedList extends AppCompatActivity {
 
         // Load data from the database
 
+        // Toolbar as action bar
+        Toolbar tb = findViewById(R.id.toolbar);
+        setSupportActionBar(tb);
     }
 
     private void loadSavedPics() {
@@ -250,5 +258,39 @@ public class SavedList extends AppCompatActivity {
             // return new row to be added to table
             return myView;
         }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //Inflater to inflate menu items in toolbar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_layout, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //new Intents that direct to each activity
+        Intent image = new Intent(this, ImageDisplay.class);
+        Intent jokes = new Intent(this, Jokes.class);
+        Intent saved = new Intent(this, SavedList.class);
+        Intent main = new Intent(this, MainActivity.class);
+
+        //switch cases for toolbar icons, direct to each activity
+        //depending on icon selected by user
+        switch(item.getItemId()) {
+            case R.id.ufo:
+                startActivity(image);
+                break;
+            case R.id.towel:
+                startActivity(jokes);
+                break;
+            case R.id.comet:
+                startActivity(saved);
+                break;
+            case R.id.number:
+                startActivity(main);
+                break;
+        }
+        return true;
     }
 }

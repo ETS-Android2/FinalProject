@@ -1,6 +1,8 @@
 package com.example.hitchikersguide;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
 import android.app.DialogFragment;
@@ -11,6 +13,9 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -113,6 +118,10 @@ public class ImageDisplay extends AppCompatActivity {
         NASAQuery forecast = new NASAQuery();
         forecast.execute(picADayURL);
 //        Picasso.get().load(imgURL).into(curImage);
+
+        // Toolbar as action bar
+        Toolbar tb = findViewById(R.id.toolbar);
+        setSupportActionBar(tb);
     }
 
     private class NASAQuery extends AsyncTask<String, Integer, String> {
@@ -192,5 +201,40 @@ public class ImageDisplay extends AppCompatActivity {
 //            curDetails.setText(imgDetails);
             progressBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //Inflater to inflate menu items in toolbar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_layout, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //new Intents that direct to each activity
+        Intent image = new Intent(this, ImageDisplay.class);
+        Intent jokes = new Intent(this, Jokes.class);
+        Intent saved = new Intent(this, SavedList.class);
+        Intent main = new Intent(this, MainActivity.class);
+
+        //switch cases for toolbar icons, direct to each activity
+        //depending on icon selected by user
+        switch(item.getItemId()) {
+            case R.id.ufo:
+                startActivity(image);
+                break;
+            case R.id.towel:
+                startActivity(jokes);
+                break;
+            case R.id.comet:
+                startActivity(saved);
+                break;
+            case R.id.number:
+                startActivity(main);
+                break;
+        }
+        return true;
     }
 }

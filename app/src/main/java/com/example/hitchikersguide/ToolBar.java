@@ -44,13 +44,6 @@ public class ToolBar extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-//        NavigationView navigationView = findViewById(R.id.navigation);
-//        navigationView.setNavigationItemSelectedListener(this);
-
-        // Welcome Page (maybe)
-        // Saved Pictures List
-        // Date Picker Page
-        // Jokes Page
     }
 
     /**
@@ -88,40 +81,10 @@ public class ToolBar extends AppCompatActivity {
             case R.id.comet:
                 startActivity(saved);
                 break;
-            case R.id.number:
+            case R.id.my_number:
                 startActivity(main);
                 break;
         }
         return true;
     }
-
-//    @Override
-//    public boolean onNavigationItemSelected(MenuItem item) {
-//        DrawerLayout drawerLayout = findViewById(R.id.drawer);
-//        drawerLayout.closeDrawer(GravityCompat.START);
-//
-//        Intent image = new Intent(this, ImageDisplay.class);
-//        Intent jokes = new Intent(this, Jokes.class);
-//        Intent saved = new Intent(this, SavedList.class);
-//        Intent main = new Intent(this, MainActivity.class);
-//
-//        //switch cases for toolbar icons, direct to each activity
-//        //depending on icon selected by user
-//        switch(item.getItemId()) {
-//            case R.id.nav_image:
-//                startActivity(image);
-//                break;
-//            case R.id.nav_jokes:
-//                startActivity(jokes);
-//                break;
-//            case R.id.nav_saved:
-//                startActivity(saved);
-//                break;
-//            case R.id.nav_main:
-//                startActivity(main);
-//                break;
-//        }
-//
-//        return false;
-//    }
 }

@@ -2,6 +2,7 @@ package com.example.hitchikersguide;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -77,12 +78,45 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             case R.id.comet:
                 startActivity(ImageList);
                 break;
-            case R.id.calendar:
+            case R.id.my_calendar:
                 startActivity(DatePicker);
                 break;
-            case R.id.number:
+            case R.id.my_number:
                 startActivity(Everything);
                 break;
+            case R.id.help:
+                //AlertDialog that displays help message according to current activity
+                String message = null;
+                String page = this.getClass().getSimpleName();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                switch(page){
+                    // Home
+                    case "MainActivity":
+                        message = getString(R.string.main_help);
+                        break;
+                    // Get Image
+                    case "ImageDisplay":
+                        message = getString(R.string.image_display_help);
+                        break;
+                    // User Details
+                    case "UserDetails":
+                        message = getString(R.string.user_details_help);
+                        break;
+                    // Image List
+                    case "SavedList":
+                        message = getString(R.string.saved_list_help);
+                        break;
+                    // Date Picker
+                    case "DatePicker":
+                        message = getString(R.string.date_picker_help);
+                        break;
+                    // Everything
+                    case "Jokes":
+                        message = getString(R.string.jokes_help);
+                        break;
+                }
+                builder.setMessage(message);
+                builder.create().show();
         }
         return true;
     }
@@ -120,6 +154,38 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_everything:
                 startActivity(Everything);
                 break;
+            case R.id.nav_help:
+                String message = null;
+                String page = this.getClass().getSimpleName();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                switch(page){
+                    // Home
+                    case "MainActivity":
+                        message = getString(R.string.main_help);
+                        break;
+                    // Get Image
+                    case "ImageDisplay":
+                        message = getString(R.string.image_display_help);
+                        break;
+                    // User Details
+                    case "UserDetails":
+                        message = getString(R.string.user_details_help);
+                        break;
+                    // Image List
+                    case "SavedList":
+                        message = getString(R.string.saved_list_help);
+                        break;
+                    // Date Picker
+                    case "DatePicker":
+                        message = getString(R.string.date_picker_help);
+                        break;
+                    // Everything
+                    case "Jokes":
+                        message = getString(R.string.jokes_help);
+                        break;
+                }
+                builder.setMessage(message);
+                builder.create().show();
         }
 
         return false;

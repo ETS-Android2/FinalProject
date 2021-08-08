@@ -26,4 +26,12 @@
 <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
     <string name="nav_calendar">Date Picker</string>
     <string name="nav_everything">Everything</string>
+    <string name="help">Help</string>
+    <string name="main_help">This is the home page</string>
+    <string name="jokes_help">Space Jokes Live Here</string>
+    <string name="space_pic_help">Look at the currently selected image and get details about it</string>
+    <string name="image_display_help">see space pic</string>
+    <string name="saved_list_help">List of images you have saved</string>
+    <string name="date_picker_help">Pick a date to find a new image</string>
+    <string name="user_details_help">User profile can been found and updated here</string>
 </resources>

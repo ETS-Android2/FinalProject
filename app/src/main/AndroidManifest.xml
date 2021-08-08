@@ -12,7 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HitchikersGuide"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EmptyActivity"></activity>
+        <activity
+            android:name=".DatePicker"
+            android:exported="true" />
+        <activity
+            android:name=".UserDetails"
+            android:exported="true" />
+        <activity
+            android:name=".BaseActivity"
+            android:exported="true" />
+        <activity android:name=".EmptyActivity" />
         <activity android:name=".ImageDisplay" />
         <activity android:name=".Jokes" />
         <activity android:name=".SavedList" />

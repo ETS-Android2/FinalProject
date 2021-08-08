@@ -23,7 +23,7 @@ import com.google.android.material.navigation.NavigationView;
  * @author Brianna Guerin
  * @author Jenne Stamplecoskie
  */
-public class ToolBar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ToolBar extends AppCompatActivity {
     /**
      * On Create Function initializes widgets and listeners
      *
@@ -44,8 +44,8 @@ public class ToolBar extends AppCompatActivity implements NavigationView.OnNavig
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.navigation);
-        navigationView.setNavigationItemSelectedListener(this);
+//        NavigationView navigationView = findViewById(R.id.navigation);
+//        navigationView.setNavigationItemSelectedListener(this);
 
         // Welcome Page (maybe)
         // Saved Pictures List
@@ -95,33 +95,33 @@ public class ToolBar extends AppCompatActivity implements NavigationView.OnNavig
         return true;
     }
 
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        DrawerLayout drawerLayout = findViewById(R.id.drawer);
-        drawerLayout.closeDrawer(GravityCompat.START);
-
-        Intent image = new Intent(this, ImageDisplay.class);
-        Intent jokes = new Intent(this, Jokes.class);
-        Intent saved = new Intent(this, SavedList.class);
-        Intent main = new Intent(this, MainActivity.class);
-
-        //switch cases for toolbar icons, direct to each activity
-        //depending on icon selected by user
-        switch(item.getItemId()) {
-            case R.id.nav_image:
-                startActivity(image);
-                break;
-            case R.id.nav_jokes:
-                startActivity(jokes);
-                break;
-            case R.id.nav_saved:
-                startActivity(saved);
-                break;
-            case R.id.nav_main:
-                startActivity(main);
-                break;
-        }
-
-        return false;
-    }
+//    @Override
+//    public boolean onNavigationItemSelected(MenuItem item) {
+//        DrawerLayout drawerLayout = findViewById(R.id.drawer);
+//        drawerLayout.closeDrawer(GravityCompat.START);
+//
+//        Intent image = new Intent(this, ImageDisplay.class);
+//        Intent jokes = new Intent(this, Jokes.class);
+//        Intent saved = new Intent(this, SavedList.class);
+//        Intent main = new Intent(this, MainActivity.class);
+//
+//        //switch cases for toolbar icons, direct to each activity
+//        //depending on icon selected by user
+//        switch(item.getItemId()) {
+//            case R.id.nav_image:
+//                startActivity(image);
+//                break;
+//            case R.id.nav_jokes:
+//                startActivity(jokes);
+//                break;
+//            case R.id.nav_saved:
+//                startActivity(saved);
+//                break;
+//            case R.id.nav_main:
+//                startActivity(main);
+//                break;
+//        }
+//
+//        return false;
+//    }
 }

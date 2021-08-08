@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Guide de l\'auto-stoppeur</string>
-    <string name="nav_image">Images de l\'espace</string>
-    <string name="nav_jokes">Blagues de l\'espace</string>
-    <string name="nav_saved">Images enregistrées</string>
+    <string name="nav_ufo"></string>
+    <string name="nav_towel"></string>
+    <string name="nav_comet">Images enregistrées</string>
     <string name="nav_main">Page d\'accueil</string>
     <string name="SL_Alert_msg1">la ligne sélectionnée est</string>
     <string name="SL_Alert_Title">Voulez-vous effacer cette image?</string>
@@ -23,4 +23,6 @@
     <string name="dismiss">REJETER</string>
     <string name="JK_getjoke">Raconte moi une blague</string>
     <string name="JK_answer">Obtenez une réponse</string>
+    <string name="nav_calendar">Date Picker</string>
+    <string name="nav_everything">Everything</string>
 </resources>

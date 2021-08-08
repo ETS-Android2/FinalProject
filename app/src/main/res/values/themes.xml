@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/hh_blue</item>
         <item name="colorPrimaryVariant">@color/hh_green</item>
         <item name="colorOnPrimary">@color/hh_orange</item>
+        <item name="colorOnBackground">@color/hh_lt_blue</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/black</item>
         <item name="colorSecondaryVariant">@color/white</item>
@@ -14,6 +15,18 @@
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+<!--        <item name="android:windowActivityTransitions">true</item>-->
+
+<!--        &lt;!&ndash; specify enter and exit transitions &ndash;&gt;-->
+<!--        <item name="android:windowEnterTransition">@transition/flip_to</item>-->
+<!--        <item name="android:windowExitTransition">@transition/flip_from</item>-->
+
+<!--        &lt;!&ndash; specify shared element transitions &ndash;&gt;-->
+<!--        <item name="android:windowSharedElementEnterTransition">-->
+<!--            @transition/change_image</item>-->
+<!--        <item name="android:windowSharedElementExitTransition">-->
+<!--            @transition/change_image</item>-->
     </style>
 
     <!-- Buttons -->

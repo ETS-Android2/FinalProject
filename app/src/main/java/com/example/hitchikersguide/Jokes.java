@@ -1,34 +1,23 @@
 package com.example.hitchikersguide;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.google.android.material.snackbar.Snackbar;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * Jokes page displays selected space jokes. Cause we got jokes son.
+ * Extends Base Activity to provide toolbar and nav drawer
  *
  * @author Brianna Guerin
  * @author Jenne Stamplecoskie
  */
-public class Jokes extends AppCompatActivity {
-    TextView JKshowjoke;
-    Button JKgetjoke;
-    Button JKanswer;
+public class Jokes extends BaseActivity {
+    TextView JK_show_joke;
+    Button JK_get_joke;
+    Button JK_answer;
 
     /**
      * On Create Function initializes widgets and listeners
@@ -38,12 +27,17 @@ public class Jokes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jokes);
 
-        JKshowjoke = findViewById(R.id.JK_textView);
-        JKgetjoke = findViewById(R.id.JK_getjoke);
-        JKanswer = findViewById(R.id.JK_answer);
+        // Inflate the jokes page layout into the Base activity frame
+        FrameLayout contentFrameLayout = findViewById(R.id.content_frame);
+        getLayoutInflater().inflate(R.layout.activity_jokes, contentFrameLayout);
 
+        // Initialize page elements
+        JK_show_joke = findViewById(R.id.JK_textView);
+        JK_get_joke = findViewById(R.id.JK_getjoke);
+        JK_answer = findViewById(R.id.JK_answer);
+
+        // Our Jokes
         String[][] jokes = {
                 {"I am throwing a party in space", "Can you help me planet?"},
                 {"Where do the keyboards go to have dinner?", "The space bar."},
@@ -65,56 +59,17 @@ public class Jokes extends AppCompatActivity {
                 {"How do you start a fight in outer space?", "Comet me bro!"}
         };
 
-        JKgetjoke.setOnClickListener(click -> {
+        // Get random joke
+        JK_get_joke.setOnClickListener(click -> {
             Random rand = new Random();
-            int max = 18;
+            int max = jokes.length;
             int num = rand.nextInt(max);
 
-            JKshowjoke.setText(jokes[num][0]);
+            JK_show_joke.setText(jokes[num][0]);
             String answer = jokes[num][1];
 
-            JKanswer.setOnClickListener(v -> {
-                Snackbar.make(JKshowjoke, answer, Snackbar.LENGTH_LONG).show();
-            });
+            // Get joke answer
+            JK_answer.setOnClickListener(v -> Snackbar.make(JK_show_joke, answer, Snackbar.LENGTH_LONG).show());
         });
-
-        // Toolbar as action bar
-        Toolbar tb = findViewById(R.id.toolbar);
-        setSupportActionBar(tb);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //Inflater to inflate menu items in toolbar
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.toolbar_layout, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        //new Intents that direct to each activity
-        Intent image = new Intent(this, ImageDisplay.class);
-        Intent jokes = new Intent(this, Jokes.class);
-        Intent saved = new Intent(this, SavedList.class);
-        Intent main = new Intent(this, MainActivity.class);
-
-        //switch cases for toolbar icons, direct to each activity
-        //depending on icon selected by user
-        switch(item.getItemId()) {
-            case R.id.ufo:
-                startActivity(image);
-                break;
-            case R.id.towel:
-                startActivity(jokes);
-                break;
-            case R.id.comet:
-                startActivity(saved);
-                break;
-            case R.id.number:
-                startActivity(main);
-                break;
-        }
-        return true;
     }
 }

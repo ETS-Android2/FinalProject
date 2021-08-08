@@ -1,91 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/nightsky"
     tools:context=".MainActivity">
-    <!--    android:background="@drawable/nightsky"-->
 
     <!-- App Logo -->
-    <ImageButton
-        android:id="@+id/AM_imageButton"
-        android:layout_width="175dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="116dp"
-        android:contentDescription="@string/mainImageDescription"
-        android:src="@drawable/logo2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="350sp"
+        android:src="@drawable/thumb"
+        android:paddingTop="24dp"
+        />
+
+    <!-- Don't Panic -->
+    <TextView
+        android:id="@+id/AM_dontPanic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp"
+        android:text="@string/don_t_panic"
+        android:textSize="64dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/hh_lt_blue"
+        />
+
+    <!-- Albert (Username) -->
+    <TextView
+        android:id="@+id/UserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Albert"
+        android:textSize="64dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/hh_lt_blue"
+        />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+    <!--    <ImageButton-->
+<!--        android:id="@+id/AM_imageButton"-->
+<!--        android:layout_width="175dp"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:layout_marginTop="116dp"-->
+<!--        android:contentDescription="@string/mainImageDescription"-->
+<!--        android:src="@drawable/logo2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <!-- Takes you to Image Picker -->
-    <Button
-        android:id="@+id/AM_dontPanic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/hh_blue"
-        android:padding="18sp"
-        android:shadowColor="@color/hh_orange"
-        android:shadowRadius="1"
-        android:text="@string/don_t_panic"
-        android:textColor="@color/hh_red"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AM_imageButton"
-        app:layout_constraintVertical_bias="0.321" />
+<!--    <Button-->
+<!--        android:id="@+id/AM_dontPanic"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="@color/hh_blue"-->
+<!--        android:padding="18sp"-->
+<!--        android:shadowColor="@color/hh_orange"-->
+<!--        android:shadowRadius="1"-->
+<!--        android:text="@string/don_t_panic"-->
+<!--        android:textColor="@color/hh_red"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/AM_imageButton"-->
+<!--        app:layout_constraintVertical_bias="0.321" />-->
     <!--    android:shadowDx="2"-->
     <!--    android:shadowDy="2"-->
 
-    <!-- Label for Name -->
-    <TextView
-        android:id="@+id/AM_labelForName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@id/AM_enterName"
-        android:layout_marginLeft="12dp"
-        android:paddingLeft="6dp"
-        android:text="@string/user_name"
-        android:textColor="@color/hh_orange"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/AM_enterName"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- Enter Your Name -->
-    <EditText
-        android:id="@+id/AM_enterName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:autofillHints="Username"
-        android:inputType="textPersonName"
-        android:textColor="@color/hh_orange"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/AM_saveLogin"
-        app:layout_constraintStart_toEndOf="@id/AM_labelForName" />
-
-    <!-- Temporary to access toolbar -->
-<!--    <Button-->
-<!--        android:id="@+id/tb"-->
+<!--    &lt;!&ndash; Label for Name &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/AM_labelForName"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:text="ToolBar"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/AM_saveLogin"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"></Button>-->
+<!--        android:labelFor="@id/AM_enterName"-->
+<!--        android:layout_marginLeft="12dp"-->
+<!--        android:paddingLeft="6dp"-->
+<!--        android:text="@string/user_name"-->
+<!--        android:textColor="@color/hh_orange"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/AM_enterName"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
-    <!-- Store Name in Shared Preferences -->
-    <Button
-        android:id="@+id/AM_saveLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/AM_enterName" />
+<!--    &lt;!&ndash; Enter Your Name &ndash;&gt;-->
+<!--    <EditText-->
+<!--        android:id="@+id/AM_enterName"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:autofillHints="Username"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:textColor="@color/hh_orange"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/AM_saveLogin"-->
+<!--        app:layout_constraintStart_toEndOf="@id/AM_labelForName" />-->
 
-    <include
-        layout="@layout/activity_tool_bar" />
+<!--    &lt;!&ndash; Temporary to access toolbar &ndash;&gt;-->
+<!--&lt;!&ndash;    <Button&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/tb"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:text="ToolBar"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintBottom_toTopOf="@id/AM_saveLogin"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintEnd_toEndOf="parent"></Button>&ndash;&gt;-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--    &lt;!&ndash; Store Name in Shared Preferences &ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/AM_saveLogin"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/login"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@id/AM_enterName" />-->
+
+<!--&lt;!&ndash;    <include&ndash;&gt;-->
+<!--&lt;!&ndash;        layout="@layout/activity_tool_bar" />&ndash;&gt;-->
+

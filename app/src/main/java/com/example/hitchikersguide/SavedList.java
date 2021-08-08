@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
@@ -30,7 +31,7 @@ import java.util.ArrayList;
  * @author Brianna Guerin
  * @author Jenne Stamplecoskie
  */
-public class SavedList extends AppCompatActivity {
+public class SavedList extends BaseActivity {
     private ArrayList<SpacePic> pictures = new ArrayList<>();
     private SQLiteDatabase myDB;
     private Cursor results;
@@ -47,7 +48,12 @@ public class SavedList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_saved_list);
+
+        // Inflate the Main Activity layout into the Base activity frame
+        FrameLayout contentFrameLayout = findViewById(R.id.content_frame);
+        getLayoutInflater().inflate(R.layout.activity_saved_list, contentFrameLayout);
+
+//        setContentView(R.layout.activity_saved_list);
 
         isTablet = findViewById(R.id.fragmentLocation) != null;
 
@@ -259,38 +265,38 @@ public class SavedList extends AppCompatActivity {
             return myView;
         }
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //Inflater to inflate menu items in toolbar
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.toolbar_layout, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        //Inflater to inflate menu items in toolbar
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.toolbar_layout, menu);
+//        return true;
+//    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        //new Intents that direct to each activity
-        Intent image = new Intent(this, ImageDisplay.class);
-        Intent jokes = new Intent(this, Jokes.class);
-        Intent saved = new Intent(this, SavedList.class);
-        Intent main = new Intent(this, MainActivity.class);
-
-        //switch cases for toolbar icons, direct to each activity
-        //depending on icon selected by user
-        switch(item.getItemId()) {
-            case R.id.ufo:
-                startActivity(image);
-                break;
-            case R.id.towel:
-                startActivity(jokes);
-                break;
-            case R.id.comet:
-                startActivity(saved);
-                break;
-            case R.id.number:
-                startActivity(main);
-                break;
-        }
-        return true;
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        //new Intents that direct to each activity
+//        Intent image = new Intent(this, ImageDisplay.class);
+//        Intent jokes = new Intent(this, Jokes.class);
+//        Intent saved = new Intent(this, SavedList.class);
+//        Intent main = new Intent(this, MainActivity.class);
+//
+//        //switch cases for toolbar icons, direct to each activity
+//        //depending on icon selected by user
+//        switch(item.getItemId()) {
+//            case R.id.ufo:
+//                startActivity(image);
+//                break;
+//            case R.id.towel:
+//                startActivity(jokes);
+//                break;
+//            case R.id.comet:
+//                startActivity(saved);
+//                break;
+//            case R.id.number:
+//                startActivity(main);
+//                break;
+//        }
+//        return true;
+//    }
 }

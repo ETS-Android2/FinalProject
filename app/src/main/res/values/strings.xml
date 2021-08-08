@@ -23,7 +23,7 @@
     <string name="JK_getjoke">Tell Me A Joke</string>
     <string name="JK_answer">Get Answer</string>
     <!-- TODO: Remove or change this placeholder text -->
-<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+    <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
     <string name="nav_calendar">Date Picker</string>
     <string name="nav_everything">Everything</string>
     <string name="help">Help</string>
@@ -34,4 +34,9 @@
     <string name="saved_list_help">List of images you have saved</string>
     <string name="date_picker_help">Pick a date to find a new image</string>
     <string name="user_details_help">User profile can been found and updated here</string>
+    <string name="alert_title">Marvin\'s Helpful Tips</string>
+    <string name="ok">Thanks Marvin!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="help_message">%s</string>
 </resources>

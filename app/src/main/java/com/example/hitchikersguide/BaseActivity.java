@@ -7,13 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,12 +40,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    /**
-     * onCreate option menu
-     *
-     * @param menu
-     * @return
-     */
+
     // TODO: Finish JavaDoc
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -115,8 +110,30 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                         message = getString(R.string.jokes_help);
                         break;
                 }
+                builder.setTitle(getResources().getString(R.string.alert_title));
                 builder.setMessage(message);
-                builder.create().show();
+                final View alertLayout = getLayoutInflater().inflate(R.layout.help_dialog, null);
+                builder.setView(alertLayout);
+//                // Initialize text
+//                TextView msgText = findViewById(R.id.HD_messageView);
+//                msgText.setText(message);
+
+
+                builder.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        // send data from the
+                        // AlertDialog to the Activity
+//                        sendDialogDataToActivity(editText.getText().toString());
+                    }
+                });
+
+                // create and show
+                // the alert dialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
         }
         return true;
     }
@@ -158,7 +175,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 String message = null;
                 String page = this.getClass().getSimpleName();
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                switch(page){
+                 switch(page){
                     // Home
                     case "MainActivity":
                         message = getString(R.string.main_help);
@@ -184,8 +201,11 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                         message = getString(R.string.jokes_help);
                         break;
                 }
-                builder.setMessage(message);
-                builder.create().show();
+                builder.setMessage(message)
+                        .setTitle(getResources().getString(R.string.alert_title))
+                        .setPositiveButton(R.string.ok, (click, arg) ->{})
+                 .create().show();
+//                AlertDialog dialog = builder.create();
         }
 
         return false;

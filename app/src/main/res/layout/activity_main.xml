@@ -34,7 +34,7 @@
         android:id="@+id/UserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Albert"
+        android:text="@string/user_name"
         android:textSize="@dimen/sub_title_size"
         android:textAlignment="center"
         android:textStyle="bold"

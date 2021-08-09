@@ -46,11 +46,11 @@ public class ImageDisplay extends BaseActivity {
 
         // Get date from date picker if passed in
         Intent passDate = getIntent();
+        newDate = passDate.getStringExtra("Date");
         if (newDate == null) {
             newDate = "2021-07-20";
-        }else {
-            newDate = passDate.getStringExtra("Date");
         }
+        Log.i("DatePicker: ", "date selected is: " + newDate);
 //        setContentView(R.layout.activity_image_display);
         // TODO: Image, Image Description, Date, Link to HDURL
         // TODO: Snackbar to say are you sure you want to leave this page to open the HDURL

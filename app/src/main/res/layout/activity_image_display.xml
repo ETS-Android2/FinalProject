@@ -23,6 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ID_imageView"
         android:layout_marginTop="@dimen/top_margin"
+        android:textAlignment="center"
         android:textSize="@dimen/bigger_para_text"/>
 
     <TextView
@@ -33,6 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ID_Title"
         android:layout_marginTop="@dimen/top_margin"
+        android:textAlignment="center"
         android:textSize="@dimen/bigger_para_text"/>
 
     <TextView
@@ -44,6 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ID_Date"
         android:layout_marginTop="@dimen/top_margin"
+        android:textAlignment="center"
         android:textSize="@dimen/smaller_para_text"/>
 
     <TextView
@@ -57,6 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ID_Url"
         android:layout_marginTop="@dimen/top_margin"
         android:textSize="@dimen/smaller_para_text"
+        android:textAlignment="center"
         android:textColor="@color/hh_blue"/>
 
 <!--    <TextView-->

@@ -10,34 +10,33 @@
         android:id="@+id/JK_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/zaphod2"
+        android:layout_marginTop="@dimen/top_margin"
         android:background="@color/white"
+        android:src="@drawable/zaphod2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/JK_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:textSize="30dp"
+        android:layout_marginTop="@dimen/top_margin"
+        android:padding="8dp"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/JK_image"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:textSize="@dimen/bigger_para_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/JK_image" />
 
     <Button
         android:id="@+id/JK_answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/JK_answer"
-        app:layout_constraintTop_toBottomOf="@id/JK_textView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-<!--    <include-->
-<!--        layout="@layout/activity_tool_bar" />-->
+        android:layout_marginBottom="@dimen/top_margin"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

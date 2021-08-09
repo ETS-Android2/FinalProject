@@ -12,7 +12,7 @@
         android:id="@+id/UD_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="@dimen/top_margin"
         android:layout_gravity="center"
         app:srcCompat="@drawable/star_profile"/>
 
@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/top_margin"
         android:orientation="horizontal">
 
         <TextView
@@ -27,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_name"
-            android:textSize="36dp"
+            android:textSize="@dimen/sub_title_size"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -45,7 +46,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
@@ -62,5 +62,5 @@
         android:padding="8dp"
         android:text="@string/profile_saying"
         android:textAlignment="center"
-        android:textSize="20dp" />
+        android:textSize="@dimen/bigger_para_text" />
 </LinearLayout>

@@ -17,7 +17,7 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="save_image">Save Image</string>
-    <string name="ID_PickImage">Pick An Image</string>
+    <string name="ID_PickImage">Choose Date</string>
     <string name="FD_Hide">HIDE</string>
     <string name="dismiss">DISMISS</string>
     <string name="JK_getjoke">Tell Me A Joke</string>
@@ -75,7 +75,7 @@
     <string name="SL_title">Image List Version 42.0</string>
     <string name="DP_title">Date Picker Version 42.0</string>
     <string name="JK_title">Everything Version 42.0</string>
-
+    <string name="start_date">\"2015-01-01\"</string>
 
 
 </resources>

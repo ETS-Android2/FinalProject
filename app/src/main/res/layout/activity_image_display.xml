@@ -6,33 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ImageDisplay">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/ID_PickDate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <DatePicker
-        android:id="@+id/ID_datePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:datePickerMode="spinner"
-        android:calendarViewShown="false"
+    <ImageView
+        android:id="@+id/ID_imageView"
+        android:layout_width="250sp"
+        android:layout_height="250sp"
+        android:layout_marginTop="@dimen/top_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ID_imageView"
-        android:layout_width="245dp"
-        android:layout_height="245dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ID_datePicker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/nightskynorthernlights" />
 
     <TextView
         android:id="@+id/ID_Title"
@@ -40,7 +21,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID_imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/ID_imageView"
+        android:layout_marginTop="@dimen/top_margin"
+        android:textSize="@dimen/bigger_para_text"/>
 
     <TextView
         android:id="@+id/ID_Date"
@@ -48,7 +31,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID_Title" />
+        app:layout_constraintTop_toBottomOf="@+id/ID_Title"
+        android:layout_marginTop="@dimen/top_margin"
+        android:textSize="@dimen/bigger_para_text"/>
 
     <TextView
         android:id="@+id/ID_Url"
@@ -57,7 +42,9 @@
         android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID_Date" />
+        app:layout_constraintTop_toBottomOf="@+id/ID_Date"
+        android:layout_marginTop="@dimen/top_margin"
+        android:textSize="@dimen/smaller_para_text"/>
 
     <TextView
         android:id="@+id/ID_HDurl"
@@ -67,22 +54,34 @@
         android:autoLink="web"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID_Url" />
+        app:layout_constraintTop_toBottomOf="@+id/ID_Url"
+        android:layout_marginTop="@dimen/top_margin"
+        android:textSize="@dimen/smaller_para_text"
+        android:textColor="@color/hh_blue"/>
 
-    <TextView
-        android:id="@+id/ID_Detail"
-        android:layout_width="wrap_content"
+<!--    <TextView-->
+<!--        android:id="@+id/ID_Detail"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/ID_HDurl" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/ID_PickDate"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/ID_PickImage"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent" />-->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toTopOf="@id/ID_SaveImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID_HDurl" />
-
-    <Button
-        android:id="@+id/ID_PickDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ID_PickImage"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
@@ -91,6 +90,9 @@
         android:layout_height="wrap_content"
         android:text="@string/save_image"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_marginBottom="@dimen/top_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

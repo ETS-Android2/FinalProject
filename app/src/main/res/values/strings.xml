@@ -30,13 +30,15 @@
     <string name="help_main">
         Funny, just when you think life can\’t possibly get any worse \n
         it suddenly does.\n
-        This is the Hitchhiker\'s Guide. \n
-        It won\'t help though. \n
+        This is the Hitchhiker\'s Guide.\n
+        It won\'t help though.\n
         It rarely does.
     </string>
     <string name="help_get_image">
-        How I hate the night.\n
-        Here\'s your current picture of the night sky.
+        Here\'s your current picture of the night sky. How I hate the night.\n
+        Use the date picker and "PICK AN IMAGE" button to choose a new image, use the "SAVE IMAGE" button
+        to add an image to the Image list.\n
+        Wretched, isn\'t it?
     </string>
     <string name="help_user_details">
         User profile can been found and updated here.\n
@@ -44,7 +46,9 @@
     </string>
     <string name="help_image_list">
         Here I am, brain the size of a planet,\n
-        and they tell me to take you up to the list of images you have saved
+        and they tell me to take you up to the list of images you have saved.\n
+        Short click an item to view the details, long click to remove it from the list.\n
+        This is the sort of thing you lifeforms enjoy, is it?
     </string>
     <string name="help_date_picker">
         Pick a date to find a new image.\n
@@ -52,14 +56,26 @@
     </string>
     <string name="help_everything">
         I think you ought to know I\’m feeling very depressed.\n
-        Space Jokes make me sad.
+        Space Jokes make me sad.\n
+        Click on Zaphod to get a new joke.\n
+        I won\'t enjoy it.
     </string>
     <string name="help_message"></string>
     <string name="alert_title">Marvin\'s Helpful Tips</string>
     <string name="ok">Thanks Marvin!</string>
+
     <string name="profile_saying">
         Space is big. You just won\'t believe how vastly, hugely, mind-bogglingly big it is. I mean,
         you may think it\'s a long way down the road to the chemist\'s,
         but that\'s just peanuts to space.</string>
+
+    <string name="MA_title">Welcome Page Version 42.0</string>
+    <string name="ID_title">Get Image Version 42.0</string>
+    <string name="UD_title">User Details Version 42.0</string>
+    <string name="SL_title">Image List Version 42.0</string>
+    <string name="DP_title">Date Picker Version 42.0</string>
+    <string name="JK_title">Everything Version 42.0</string>
+
+
 
 </resources>

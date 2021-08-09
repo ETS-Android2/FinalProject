@@ -1,12 +1,17 @@
 package com.example.hitchikersguide;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,9 +19,7 @@ public class UserDetails extends BaseActivity {
     private SharedPreferences prefs;
     private static final String PREF_FILENAME = "myPrefs";
     private static final String USRNAME = "Name";
-    private static final String EMAIL = "Email";
-    private static final String BDAY = "Birthday";
-    private static final String ABOUT = "Bio";
+    String loginName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,27 +31,55 @@ public class UserDetails extends BaseActivity {
 
         // Load the sharedPreferences
         prefs = getSharedPreferences(PREF_FILENAME, Context.MODE_PRIVATE);
-        String loginName = prefs.getString(USRNAME, "");
+        loginName = prefs.getString(USRNAME, "");
 
-        // Initialize Page Elements
-        ImageView profilePic = findViewById(R.id.UD_imageView);
-        TextView name = findViewById(R.id.UD_Name);
-        TextView email = findViewById(R.id.UD_Email);
-        TextView birthday = findViewById(R.id.UD_Birthdate);
-        TextView bio = findViewById(R.id.UD_Bio);
-        Button update = findViewById(R.id.UD_UpdateButton);
+        // Initialize UserName with username from shared prefs
+        TextView userName = findViewById(R.id.UD_UserName);
+        userName.setText(loginName);
+
+        // Initialize edit button and set on click listener
+        ImageButton update = findViewById(R.id.UD_UpdateButton);
 
         update.setOnClickListener(click -> {
-            saveSharedPrefs(USRNAME, name.getText().toString());
-            saveSharedPrefs(EMAIL, email.getText().toString());
-            saveSharedPrefs(BDAY, birthday.getText().toString());
-            saveSharedPrefs(ABOUT, bio.getText().toString());
+            // create an alert builder
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Name");
+            // set the custom layout
+            final View updateLayout = getLayoutInflater().inflate(R.layout.update_name_alert, null);
+            builder.setView(updateLayout);
+            // add a button
+            builder.setPositiveButton("UPDATE", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // send data from the AlertDialog to the Activity
+                    EditText editName = updateLayout.findViewById(R.id.UD_updateName);
+                    loginName = editName.getText().toString();
+                    saveSharedPrefs(USRNAME, loginName);
+                    userName.setText(loginName);
+//                    sendDialogDataToActivity(editName.getText().toString());
+                }
+            });
+            // create and show the alert dialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
+            // Make the button pretty
+            Button okButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+            if (okButton != null) {
+                okButton.setBackgroundColor(getResources().getColor(R.color.hh_blue));
+                okButton.setTextColor(getResources().getColor(R.color.hh_orange));
+            }
+//        // do something with the data coming from the AlertDialog
+//    saveSharedPrefs(USRNAME, name.getText().toString());
+
         });
 
-        // Profile pic loading crashed it (I think I need to make a smaller profile pic)
-        // Update info... do we want textviews and update has edit text or ??
-
+//        private void sendDialogDataToActivity(String data) {
+//            Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
+//        }
     }
+
+
 
     /**
      * Saves users login name to share preferences for next opening of app

@@ -63,15 +63,6 @@ public class SavedList extends BaseActivity {
         TextView listDetails = findViewById(R.id.IL_Details);
         TextView listHDURL = findViewById(R.id.IL_HDURL);
 
-        // Define Next Activity - Jokes
-        Intent activityJK = new Intent(this, Jokes.class);
-
-        // Button to take you to Joke activity
-        Button jokeButton = findViewById(R.id.SL_ToJokesButton);
-        jokeButton.setOnClickListener(click -> startActivity(activityJK));
-
-        Button saveImg = findViewById(R.id.SL_SaveImage);
-
         // Listview
         ListView imgList = findViewById(R.id.SL_ListOfImages);
         MyAdapter myAdapter = new MyAdapter();
@@ -86,7 +77,7 @@ public class SavedList extends BaseActivity {
         imgHDURL = passImg.getStringExtra("HDURL");
         imgDetails = passImg.getStringExtra("Details");
 
-        saveImg.setOnClickListener(click -> {
+        if (imgTitle != null) {
             ContentValues newRowValues = new ContentValues();
             newRowValues.put(MyDBOpener.COL_DATE, imgDate);
             newRowValues.put(MyDBOpener.COL_URL, imgURL);
@@ -98,18 +89,7 @@ public class SavedList extends BaseActivity {
             pic = new SpacePic(imgDate, imgTitle, imgURL, imgHDURL, imgDetails);
             pictures.add(pic);
             myAdapter.notifyDataSetChanged();
-        });
-
-        //Add elements to the list view
-        // TODO: Remove once we have a proper list of saved images
-//        SpacePic pic;
-//        for ( int i = 1; i <= 8; i++ ){
-//            pic = new SpacePic(i, "date" + i, "www.spacepics" + i + ".com");
-//            pic.setTitle("Title" + i);
-//            pic.setDetails("A description might go here...");
-//            pic.setHDURL("www.spacepicsInHighDef" + i + ".com");
-//            pictures.add(pic);
-//        }
+        };
 
         // Get details of an item on the list
         imgList.setOnItemClickListener((parent, view, position, id) -> {
@@ -129,10 +109,6 @@ public class SavedList extends BaseActivity {
                 activityEM.putExtras(dataToPass);
                 startActivity(activityEM);
             }
-//            String details = "image date: " + pictures.get(position).imgDate +
-//                    " url: " + pictures.get(position).imgURL + " ID: " +
-//                    pictures.get(position).imgID;
-//            Snackbar.make(imgList, details, Snackbar.LENGTH_LONG).show();
         });
 
         // Remove an item from the list

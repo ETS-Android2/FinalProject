@@ -23,25 +23,48 @@
     <string name="dismiss">REJETER</string>
     <string name="JK_getjoke">Raconte moi une blague</string>
     <string name="JK_answer">Obtenez une réponse</string>
-    <string name="nav_calendar">Date Picker</string>
-    <string name="nav_everything">Everything</string>
+    <string name="nav_calendar">Sélecteur de date</string>
+    <string name="nav_everything">Tout</string>
 
     <!-- Help Strings   -->
     <string name="help">Help</string>
-    <string name="help_main">Funny, just when you think life can\’t possibly get any worse it suddenly does.\nThis is the Hitchhiker\'s Guide. \n
-        It won\'t help though. \nIt rarely does.</string>
+    <string name="help_main">
+        C\'est drôle, juste au moment où vous pensez que la vie ne peut pas être pire, c\'est soudainement le cas.\n
+        Ceci est le guide de l\'auto-stoppeur.\n
+        Cela n\'aidera pas cependant.\n
+        C\'est rarement le cas.
+    </string>
     <string name="help_get_image">
-How I hate the night.\n
-    Here\'s your current picture of the night sky. </string>
-    <string name="help_user_details">User profile can been found and updated here</string>
-    <string name="help_image_list">Here I am, brain the size of a planet,\n
-        and they tell me to take you up to the list of images you have saved</string>
-    <string name="help_date_picker">Pick a date to find a new image.\n
-        It won\'t make you happy though.</string>
-    <string name="help_everything">I think you ought to know I\’m feeling very depressed.\n
-        Space Jokes make me sad.</string>
+        Comme je déteste la nuit.\n
+        Voici votre image actuelle du ciel nocturne.
+    </string>
+    <string name="help_user_details">
+        Le profil de l\'utilisateur peut être trouvé et mis à jour ici.\n
+        Je ne sais pas pourquoi tu t\'embêterais.
+    </string>
+    <string name="help_image_list">
+        Me voici, cerveau de la taille d\'une planète,\n
+        et ils me disent de vous amener à la liste des images que vous avez enregistrées.
+    </string>
+    <string name="help_date_picker">
+        Choisissez une date pour trouver une nouvelle image.\n
+        Cela ne vous rendra pas heureux cependant.
+    </string>
+    <string name="help_everything">
+        Je pense que tu devrais savoir que je me sens très déprimé.\n
+        Les blagues sur l\'espace me rendent triste.\n
+        Cliquez sur Zaphod pour obtenir une nouvelle blague.\n
+        Je ne l\'apprécierai pas.
+    </string>
     <string name="help_message"></string>
-    <string name="alert_title">Marvin\'s Helpful Tips</string>
-    <string name="ok">Thanks Marvin!</string>
+    <string name="alert_title">Conseils utiles de Marvin</string>
+    <string name="ok">Merci Marvin!</string>
+
+    <string name="MA_title">Page d\'accueil Version 42.0</string>
+    <string name="ID_title">Obtenir une image Version 42.0</string>
+    <string name="UD_title">Détails de l\'utilisateur Version 42.0</string>
+    <string name="SL_title">Liste d\'images List Version 42.0</string>
+    <string name="DP_title">Sélecteur de date Version 42.0</string>
+    <string name="JK_title">Tout Version 42.0</string>
 
 </resources>

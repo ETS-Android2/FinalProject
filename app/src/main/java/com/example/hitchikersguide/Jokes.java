@@ -3,6 +3,7 @@ package com.example.hitchikersguide;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Random;
@@ -15,8 +16,8 @@ import java.util.Random;
  * @author Jenne Stamplecoskie
  */
 public class Jokes extends BaseActivity {
+    ImageButton JK_image;
     TextView JK_show_joke;
-    Button JK_get_joke;
     Button JK_answer;
 
     /**
@@ -33,8 +34,8 @@ public class Jokes extends BaseActivity {
         getLayoutInflater().inflate(R.layout.activity_jokes, contentFrameLayout);
 
         // Initialize page elements
+        JK_image = findViewById(R.id.JK_image);
         JK_show_joke = findViewById(R.id.JK_textView);
-        JK_get_joke = findViewById(R.id.JK_getjoke);
         JK_answer = findViewById(R.id.JK_answer);
 
         // Our Jokes
@@ -60,7 +61,7 @@ public class Jokes extends BaseActivity {
         };
 
         // Get random joke
-        JK_get_joke.setOnClickListener(click -> {
+        JK_image.setOnClickListener(click -> {
             Random rand = new Random();
             int max = jokes.length;
             int num = rand.nextInt(max);

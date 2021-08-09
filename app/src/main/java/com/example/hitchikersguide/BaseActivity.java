@@ -39,7 +39,44 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         // Initialize Navigation View
         NavigationView navigationView = findViewById(R.id.navigation);
+
+        View headerView = navigationView.getHeaderView(0);
+
+        TextView nav_title = headerView.findViewById(R.id.nav_title);
+        String title = null;
+        String activity = this.getClass().getSimpleName();
+        switch(activity){
+            //Home
+            case "MainActivity":
+                title = getString(R.string.MA_title);
+                break;
+            // Get Image
+            case "ImageDisplay":
+                title = getString(R.string.ID_title);
+                break;
+            // User Details
+            case "UserDetails":
+                title = getString(R.string.UD_title);
+                break;
+            // Image List
+            case "SavedList":
+                title = getString(R.string.SL_title);
+                break;
+            // Date Picker
+            case "DatePicker":
+                title = getString(R.string.DP_title);
+                break;
+            // Everything
+            case "Jokes":
+                title = getString(R.string.JK_title);
+                break;
+        }
+        nav_title.setText(title);
+
+        navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
 
@@ -127,7 +164,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                     }
                 });
 
-
                 // the alert dialog
                 AlertDialog dialog = builder.create();
                 dialog.show();
@@ -138,9 +174,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                     okButton.setBackgroundColor(getResources().getColor(R.color.hh_blue));
                     okButton.setTextColor(getResources().getColor(R.color.hh_orange));
                 }
-
                 // Make the Title Pretty
-                
         }
         return true;
     }
@@ -208,14 +242,34 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                         message = getString(R.string.help_everything);
                         break;
                 }
-                builder.setMessage(message)
-                        .setTitle(getResources().getString(R.string.alert_title))
-                        .setPositiveButton(R.string.ok, (click, arg) ->{})
-                 .create().show();
-//                AlertDialog dialog = builder.create();
-        }
+                builder.setTitle(getResources().getString(R.string.alert_title));
 
-        return false;
+                final View alertLayout = getLayoutInflater().inflate(R.layout.help_dialog, null);
+
+                final TextView msgText = alertLayout.findViewById(R.id.HD_messageView);
+                msgText.setText(message);
+
+                builder.setView(alertLayout);
+
+                builder.setPositiveButton(R.string.ok,new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+
+                // the alert dialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                // Make the button pretty
+                Button okButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+                if (okButton != null) {
+                    okButton.setBackgroundColor(getResources().getColor(R.color.hh_blue));
+                    okButton.setTextColor(getResources().getColor(R.color.hh_orange));
+                }
+                // Make the Title Pretty
+        }
+        return true;
     }
 
 }

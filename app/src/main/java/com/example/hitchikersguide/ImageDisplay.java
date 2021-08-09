@@ -32,7 +32,7 @@ import java.net.URL;
 public class ImageDisplay extends BaseActivity {
     ProgressBar progressBar;
     TextView curDate, curTitle, curURL, curHDURL, curDetails;
-    String newDate = "2021-07-01";
+    String newDate;
     ImageView curImage;
     String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;
 
@@ -44,13 +44,20 @@ public class ImageDisplay extends BaseActivity {
         FrameLayout contentFrameLayout = findViewById(R.id.content_frame);
         getLayoutInflater().inflate(R.layout.activity_image_display, contentFrameLayout);
 
+        // Get date from date picker if passed in
+        Intent passDate = getIntent();
+        if (newDate == null) {
+            newDate = "2021-07-20";
+        }else {
+            newDate = passDate.getStringExtra("Date");
+        }
 //        setContentView(R.layout.activity_image_display);
         // TODO: Image, Image Description, Date, Link to HDURL
         // TODO: Snackbar to say are you sure you want to leave this page to open the HDURL
 
-        // Initialize Date Picker
-        DatePicker picker;
-        picker = findViewById(R.id.ID_datePicker);
+//        // Initialize Date Picker
+//        DatePicker picker;
+//        picker = findViewById(R.id.ID_datePicker);
 
         Button saveImage = findViewById(R.id.ID_SaveImage);
         Intent passImg = new Intent(getBaseContext(), SavedList.class);
@@ -63,18 +70,18 @@ public class ImageDisplay extends BaseActivity {
             startActivity(passImg);
         });
 
-        Button dateButton = findViewById(R.id.ID_PickDate);
-        dateButton.setOnClickListener(click -> {
-
-            newDate = picker.getYear() + "-" + (picker.getMonth() + 1 )+ "-" + picker.getDayOfMonth();
-            Log.i("DatePicker: ", "date selected is: " + newDate);
+//        Button dateButton = findViewById(R.id.ID_PickDate);
+//        dateButton.setOnClickListener(click -> {
+//
+//            newDate = picker.getYear() + "-" + (picker.getMonth() + 1 )+ "-" + picker.getDayOfMonth();
+//            Log.i("DatePicker: ", "date selected is: " + newDate);
 
             // Open AsyncTask
-            String picADayURL = "https://api.nasa.gov/planetary/apod?api_key=DU59VMplWgJa1xFzZbTuMZgLkdcVeoZkJZu21esv&date=" + newDate;
-            NASAQuery getImageDetails = new NASAQuery();
-            getImageDetails.execute(picADayURL);
+//            String picADayURL = "https://api.nasa.gov/planetary/apod?api_key=DU59VMplWgJa1xFzZbTuMZgLkdcVeoZkJZu21esv&date=" + newDate;
+//            NASAQuery getImageDetails = new NASAQuery();
+//            getImageDetails.execute(picADayURL);
 
-        });
+//        });
 
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
@@ -85,7 +92,7 @@ public class ImageDisplay extends BaseActivity {
         //    Intent i = new Intent(Intent.ACTION_VIEW);
         //    i.setData( Uri.parse(url) );
         //    startActivity(i);
-        String date = "2021-07-01";
+//        String date = "2021-07-01";
 
         // Define fields
         curDate = findViewById(R.id.ID_Date);

@@ -70,6 +70,7 @@
     <string name="SL_title">Liste d\'images List Version 42.0</string>
     <string name="DP_title">Sélecteur de date Version 42.0</string>
     <string name="JK_title">Tout Version 42.0</string>
+    <string name="start_date">\"2015-01-01\"</string>
 
 
 </resources>

@@ -16,6 +16,9 @@
         android:id="@+id/HD_messageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin"
+        android:padding="8sp"
+        android:textSize="@dimen/smaller_para_text"
         android:text="@string/help_message" />
 
 </LinearLayout>

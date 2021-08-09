@@ -1,65 +1,17 @@
 <resources>
     <string name="app_name">Hitchiker\'s Guide</string>
-    <string name="nav_ufo">Get Image</string>
-    <string name="nav_towel">User Details</string>
-    <string name="nav_comet">Image List</string>
+    <string name="nav_image">Space Images</string>
+    <string name="nav_jokes">Space Jokes</string>
+    <string name="nav_saved">Saved Images</string>
     <string name="nav_main">Welcome Page</string>
     <string name="SL_Alert_msg1">selected row is</string>
     <string name="SL_Alert_Title">Do you want to delete this picture?</string>
     <string name="SL_Alert_msg2">selected Database is</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="don_t_panic">Don\'t Panic</string>
+    <string name="don_t_panic">Don\'t Panic %s</string>
     <string name="mainImageDescription">Hitchhiker\'s thumb in front ot a planet</string>
     <string name="login">Login</string>
-    <string name="user_name">Arthur</string>
+    <string name="user_name">Name:</string>
     <string name="jokes_page">Jokes Page</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
-    <string name="save_image">Save Image</string>
-    <string name="ID_PickImage">Pick An Image</string>
-    <string name="FD_Hide">HIDE</string>
-    <string name="dismiss">DISMISS</string>
-    <string name="JK_getjoke">Tell Me A Joke</string>
-    <string name="JK_answer">Get Answer</string>
-    <string name="nav_calendar">Date Picker</string>
-    <string name="nav_everything">Everything</string>
-
-    <!-- Help Strings   -->
-    <string name="help">Help</string>
-    <string name="help_main">
-        Funny, just when you think life can\’t possibly get any worse \n
-        it suddenly does.\n
-        This is the Hitchhiker\'s Guide. \n
-        It won\'t help though. \n
-        It rarely does.
-    </string>
-    <string name="help_get_image">
-        How I hate the night.\n
-        Here\'s your current picture of the night sky.
-    </string>
-    <string name="help_user_details">
-        User profile can been found and updated here.\n
-        I don\'t know why you\'d bother.
-    </string>
-    <string name="help_image_list">
-        Here I am, brain the size of a planet,\n
-        and they tell me to take you up to the list of images you have saved
-    </string>
-    <string name="help_date_picker">
-        Pick a date to find a new image.\n
-        It won\'t make you happy though.
-    </string>
-    <string name="help_everything">
-        I think you ought to know I\’m feeling very depressed.\n
-        Space Jokes make me sad.
-    </string>
-    <string name="help_message"></string>
-    <string name="alert_title">Marvin\'s Helpful Tips</string>
-    <string name="ok">Thanks Marvin!</string>
-    <string name="profile_saying">
-        Space is big. You just won\'t believe how vastly, hugely, mind-bogglingly big it is. I mean,
-        you may think it\'s a long way down the road to the chemist\'s,
-        but that\'s just peanuts to space.</string>
-
 </resources>

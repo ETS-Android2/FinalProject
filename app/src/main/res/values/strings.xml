@@ -63,12 +63,19 @@
     <string name="help_message"></string>
     <string name="alert_title">Marvin\'s Helpful Tips</string>
     <string name="ok">Thanks Marvin!</string>
+
+    <string name="profile_saying">
+        Space is big. You just won\'t believe how vastly, hugely, mind-bogglingly big it is. I mean,
+        you may think it\'s a long way down the road to the chemist\'s,
+        but that\'s just peanuts to space.</string>
+
     <string name="MA_title">Welcome Page Version 42.0</string>
     <string name="ID_title">Get Image Version 42.0</string>
     <string name="UD_title">User Details Version 42.0</string>
     <string name="SL_title">Image List Version 42.0</string>
     <string name="DP_title">Date Picker Version 42.0</string>
     <string name="JK_title">Everything Version 42.0</string>
+
 
 
 </resources>

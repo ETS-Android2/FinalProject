@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".UserDetails">
 
     <ImageView
@@ -11,69 +13,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
-        app:layout_constraintEnd_toEndOf="@+id/UD_Email"
-        app:layout_constraintStart_toStartOf="@+id/UD_Email"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profilepic"/>
-<!--        app:srcCompat="@drawable/nightskyman" />-->
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/star_profile"/>
 
-    <EditText
-        android:id="@+id/UD_Name"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/UD_UserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_name"
+            android:textSize="36dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/UD_UpdateButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="left"
+            android:background="@drawable/round_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/UD_UserName"
+            app:srcCompat="@drawable/pencil"
+            tools:layout_editor_absoluteY="8dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="36dp"
+        android:background="?android:attr/listDivider" />
+
+    <TextView
+        android:id="@+id/UD_Saying"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="name"
-        app:layout_constraintBottom_toTopOf="@+id/UD_Email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UD_imageView" />
-
-    <EditText
-        android:id="@+id/UD_Email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="email address"
-        app:layout_constraintBottom_toTopOf="@+id/UD_Birthdate"
-        app:layout_constraintEnd_toEndOf="@+id/UD_Birthdate"
-        app:layout_constraintStart_toStartOf="@+id/UD_Birthdate" />
-
-
-
-    <EditText
-        android:id="@+id/UD_Birthdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="date"
-        android:hint="DD/MM/YYYY"
-        app:layout_constraintBottom_toTopOf="@+id/UD_Bio"
-        app:layout_constraintEnd_toEndOf="@+id/UD_Bio"
-        app:layout_constraintStart_toStartOf="@+id/UD_Bio" />
-
-    <EditText
-        android:id="@+id/UD_Bio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:hint="a bit about me"
-        app:layout_constraintBottom_toTopOf="@+id/UD_UpdateButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/UD_UpdateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
-        android:text="Update"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="center"
+        android:padding="8dp"
+        android:text="@string/profile_saying"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+</LinearLayout>

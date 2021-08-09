@@ -3,12 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
+        <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/drawable/round_button.xml" value="0.25" />
+        <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout-sw720dp/activity_saved_list.xml" value="0.275" />
+        <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/activity_base.xml" value="0.12121212121212122" />
+        <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/activity_date_picker.xml" value="0.36666666666666664" />
+
         <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/activity_image_display.xml" value="0.1" />
         <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/activity_jokes.xml" value="0.1" />
         <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
         <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/activity_saved_list.xml" value="0.1" />
         <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/activity_tool_bar.xml" value="0.16847826086956522" />
+
+        <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/activity_user_details.xml" value="0.2930253623188406" />
         <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/fragment_details.xml" value="0.36666666666666664" />
+        <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/fragment_dialog.xml" value="0.20199275362318841" />
+        <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/help_dialog.xml" value="0.25833333333333336" />
+        <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/layout/update_name_alert.xml" value="0.17831813576494426" />
+
+   
+
         <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/menu/navigation_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/MobileProjects/FinalProject/app/src/main/res/menu/toolbar_layout.xml" value="0.34444444444444444" />
         <entry key="..\:/Users/blgue/StudioProjects/FinalProject/app/src/main/res/layout/activity_base.xml" value="0.10559210526315789" />

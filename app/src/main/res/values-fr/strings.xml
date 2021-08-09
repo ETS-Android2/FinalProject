@@ -57,6 +57,10 @@
         Je ne l\'apprécierai pas.
     </string>
     <string name="help_message"></string>
+
+
+    <string name="profile_saying">“Space is big. You just won\'t believe how vastly, hugely, mind-bogglingly big it is. I mean, you may think it/\'s a long way down the road to the chemist/\'s, but that/\'s just peanuts to space.”</string>
+
     <string name="alert_title">Conseils utiles de Marvin</string>
     <string name="ok">Merci Marvin!</string>
 
@@ -66,5 +70,6 @@
     <string name="SL_title">Liste d\'images List Version 42.0</string>
     <string name="DP_title">Sélecteur de date Version 42.0</string>
     <string name="JK_title">Tout Version 42.0</string>
+
 
 </resources>

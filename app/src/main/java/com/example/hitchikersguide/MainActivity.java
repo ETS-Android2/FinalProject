@@ -42,47 +42,5 @@ public class MainActivity extends BaseActivity{
         name.setText(loginName);
     }
 }
-//        // Define Next Activity
-//        Intent activitySL = new Intent(this, SavedList.class);
-//        Intent activityID = new Intent(this, ImageDisplay.class);
-
-//        // Logo Opens saved list of images
-//        ImageButton thumbButton = findViewById(R.id.AM_imageButton);
-//        thumbButton.setOnClickListener(click -> startActivity(activitySL));
-
-//        // Panic Button opens date picker activity
-//        Button panicButton = findViewById(R.id.AM_dontPanic);
-//        panicButton.setOnClickListener(click  -> {
-//            startActivity(activityID);
-//        });
-
-//        // Enter Login Name
-//        TextView myName = findViewById(R.id.AM_enterName);
-//        Button enterName = findViewById(R.id.AM_saveLogin);
-//        String parName = "Name";
-//        enterName.setOnClickListener(click -> {
-//            saveSharedPrefs(parName , myName.getText().toString());
-//            panicButton.setText(String.format(getString(R.string.don_t_panic), myName.getText().toString()));
-
-//            //  option on the nav menu. Would probably need to load the login row as a fragment
-//        });
-
-
-
-
-//        panicButton.setText(String.format(getString(R.string.don_t_panic), loginName));
-
-
-//    /**
-//     * Saves users login name to share preferences for next opening of app
-//     * @param parName - this is the name of the parameter to be saved in shared preferences
-//     * @param parValue - this is the value of the parameter to be saved in shared preferences
-//     */
-//    private void saveSharedPrefs(String parName, String parValue)
-//    {
-//        SharedPreferences.Editor editor = prefs.edit();
-//        editor.putString(parName, parValue);
-//        editor.apply();
-//    }
 
 

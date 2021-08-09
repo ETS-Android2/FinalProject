@@ -14,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -87,53 +89,58 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 switch(page){
                     // Home
                     case "MainActivity":
-                        message = getString(R.string.main_help);
+                        message = getString(R.string.help_main);
                         break;
                     // Get Image
                     case "ImageDisplay":
-                        message = getString(R.string.image_display_help);
+                        message = getString(R.string.help_get_image);
                         break;
                     // User Details
                     case "UserDetails":
-                        message = getString(R.string.user_details_help);
+                        message = getString(R.string.help_user_details);
                         break;
                     // Image List
                     case "SavedList":
-                        message = getString(R.string.saved_list_help);
+                        message = getString(R.string.help_image_list);
                         break;
                     // Date Picker
                     case "DatePicker":
-                        message = getString(R.string.date_picker_help);
+                        message = getString(R.string.help_date_picker);
                         break;
                     // Everything
                     case "Jokes":
-                        message = getString(R.string.jokes_help);
+                        message = getString(R.string.help_everything);
                         break;
                 }
                 builder.setTitle(getResources().getString(R.string.alert_title));
-                builder.setMessage(message);
+
                 final View alertLayout = getLayoutInflater().inflate(R.layout.help_dialog, null);
+
+                final TextView msgText = alertLayout.findViewById(R.id.HD_messageView);
+                msgText.setText(message);
+
                 builder.setView(alertLayout);
-//                // Initialize text
-//                TextView msgText = findViewById(R.id.HD_messageView);
-//                msgText.setText(message);
 
-
-                builder.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                builder.setPositiveButton(R.string.ok,new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
-                        // send data from the
-                        // AlertDialog to the Activity
-//                        sendDialogDataToActivity(editText.getText().toString());
                     }
                 });
 
-                // create and show
+
                 // the alert dialog
                 AlertDialog dialog = builder.create();
                 dialog.show();
 
+                // Make the button pretty
+                Button okButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+                if (okButton != null) {
+                    okButton.setBackgroundColor(getResources().getColor(R.color.hh_blue));
+                    okButton.setTextColor(getResources().getColor(R.color.hh_orange));
+                }
+
+                // Make the Title Pretty
+                
         }
         return true;
     }
@@ -178,27 +185,27 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                  switch(page){
                     // Home
                     case "MainActivity":
-                        message = getString(R.string.main_help);
+                        message = getString(R.string.help_main);
                         break;
                     // Get Image
                     case "ImageDisplay":
-                        message = getString(R.string.image_display_help);
+                        message = getString(R.string.help_get_image);
                         break;
                     // User Details
                     case "UserDetails":
-                        message = getString(R.string.user_details_help);
+                        message = getString(R.string.help_user_details);
                         break;
                     // Image List
                     case "SavedList":
-                        message = getString(R.string.saved_list_help);
+                        message = getString(R.string.help_image_list);
                         break;
                     // Date Picker
                     case "DatePicker":
-                        message = getString(R.string.date_picker_help);
+                        message = getString(R.string.help_date_picker);
                         break;
                     // Everything
                     case "Jokes":
-                        message = getString(R.string.jokes_help);
+                        message = getString(R.string.help_everything);
                         break;
                 }
                 builder.setMessage(message)

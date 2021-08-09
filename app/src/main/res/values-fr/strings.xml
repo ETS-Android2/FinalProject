@@ -25,15 +25,23 @@
     <string name="JK_answer">Obtenez une réponse</string>
     <string name="nav_calendar">Date Picker</string>
     <string name="nav_everything">Everything</string>
+
+    <!-- Help Strings   -->
     <string name="help">Help</string>
-    <string name="main_help">This is the home page</string>
-    <string name="jokes_help">Space Jokes Live Here</string>
-    <string name="space_pic_help">Look at the currently selected image and get details about it</string>
-    <string name="image_display_help">see space pic</string>
-    <string name="saved_list_help">List of images you have saved</string>
-    <string name="date_picker_help">Pick a date to find a new image</string>
-    <string name="user_details_help">User profile can been found and updated here</string>
+    <string name="help_main">Funny, just when you think life can\’t possibly get any worse it suddenly does.\nThis is the Hitchhiker\'s Guide. \n
+        It won\'t help though. \nIt rarely does.</string>
+    <string name="help_get_image">
+How I hate the night.\n
+    Here\'s your current picture of the night sky. </string>
+    <string name="help_user_details">User profile can been found and updated here</string>
+    <string name="help_image_list">Here I am, brain the size of a planet,\n
+        and they tell me to take you up to the list of images you have saved</string>
+    <string name="help_date_picker">Pick a date to find a new image.\n
+        It won\'t make you happy though.</string>
+    <string name="help_everything">I think you ought to know I\’m feeling very depressed.\n
+        Space Jokes make me sad.</string>
+    <string name="help_message"></string>
     <string name="alert_title">Marvin\'s Helpful Tips</string>
     <string name="ok">Thanks Marvin!</string>
-    <string name="help_message">%s</string>
+
 </resources>

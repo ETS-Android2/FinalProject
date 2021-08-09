@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tb_menu">
 
     <item android:id="@+id/ufo"
         android:title="ufo"
@@ -23,10 +24,24 @@
         app:showAsAction="always">
     </item>
 
-    <item android:id="@+id/number"
+    <item android:id="@+id/my_calendar"
+        android:title="calendar"
+        android:icon="@drawable/calendar"
+        android:orderInCategory="4"
+        app:showAsAction="always">
+    </item>
+
+    <item android:id="@+id/my_number"
         android:title="number"
         android:icon="@drawable/number"
-        android:orderInCategory="4"
+        android:orderInCategory="5"
+        app:showAsAction="always">
+    </item>
+
+    <item android:id="@+id/help"
+        android:title="@string/help"
+        android:icon="@drawable/help"
+        android:orderInCategory="5"
         app:showAsAction="always">
     </item>
 

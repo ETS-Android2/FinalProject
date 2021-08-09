@@ -72,7 +72,8 @@ public class Jokes extends BaseActivity {
             String answer = jokes[num][1];
 
             // Get joke answer
-            JK_answer.setOnClickListener(v -> Toast.makeText(getBaseContext(), answer, Toast.LENGTH_LONG).show());
+            JK_answer.setOnClickListener(v -> Snackbar.make(JK_show_joke, answer, Snackbar.LENGTH_LONG).show());
+
         });
     }
 }

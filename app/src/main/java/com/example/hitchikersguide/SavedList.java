@@ -67,7 +67,7 @@ public class SavedList extends BaseActivity {
             newRowValues.put(MyDBOpener.COL_HDURL, imgHDURL);
             newRowValues.put(MyDBOpener.COL_TITLE, imgTitle);
             newRowValues.put(MyDBOpener.COL_DETAIL, imgDetails);
-//            long newID = myDB.insert(MyDBOpener.TABLE_NAME, null, newRowValues);
+            long newID = myDB.insert(MyDBOpener.TABLE_NAME, null, newRowValues);
 
             pic = new SpacePic(imgDate, imgTitle, imgURL, imgHDURL, imgDetails);
             pictures.add(pic);

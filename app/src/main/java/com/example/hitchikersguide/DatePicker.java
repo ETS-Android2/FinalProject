@@ -1,14 +1,10 @@
 package com.example.hitchikersguide;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.Toast;
-
 import java.util.Date;
 
 public class DatePicker extends BaseActivity {
@@ -16,7 +12,6 @@ public class DatePicker extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_date_picker);
 
         // Inflate the Main Activity layout into the Base activity frame
         FrameLayout contentFrameLayout = findViewById(R.id.content_frame);
@@ -25,6 +20,7 @@ public class DatePicker extends BaseActivity {
         // Initialize Date Picker
         android.widget.DatePicker picker;
         picker = findViewById(R.id.DP_datePicker);
+
         // Set maximum date (minimum is set already)
         picker.setMaxDate(new Date().getTime());
 

@@ -1,9 +1,7 @@
 package com.example.hitchikersguide;
 
-import androidx.appcompat.widget.Toolbar;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +18,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Image Display Activity shows the selected image and its related details
@@ -30,7 +29,7 @@ import java.net.URL;
  */
 public class ImageDisplay extends BaseActivity {
     ProgressBar progressBar;
-    TextView curDate, curTitle, curURL, curHDURL, curDetails;
+    TextView curDate, curTitle, curURL, curHDURL;
     String newDate;
     ImageView curImage;
     String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;
@@ -87,14 +86,9 @@ public class ImageDisplay extends BaseActivity {
         String picADayURL = "https://api.nasa.gov/planetary/apod?api_key=DU59VMplWgJa1xFzZbTuMZgLkdcVeoZkJZu21esv&date=" + newDate;
         NASAQuery forecast = new NASAQuery();
         forecast.execute(picADayURL);
-
-        // Toolbar as action bar
-        Toolbar tb = findViewById(R.id.toolbar);
-        setSupportActionBar(tb);
     }
 
     private class NASAQuery extends AsyncTask<String, Integer, String> {
-        Bitmap myPic;
 
         @Override
         protected String doInBackground(String... args){
@@ -111,12 +105,12 @@ public class ImageDisplay extends BaseActivity {
                 //JSON reading:
                 //Build the entire string response:
                 BufferedReader reader = new BufferedReader(
-                        new InputStreamReader(response, "UTF-8"), 8);
+                        new InputStreamReader(response, StandardCharsets.UTF_8), 8);
                 StringBuilder sb = new StringBuilder();
 
-                String line = null;
+                String line;// = null;
                 while ((line = reader.readLine()) != null) {
-                    sb.append(line + "\n");
+                    sb.append(line).append("\n");
                 }
                 String result = sb.toString(); //result is the whole string
 
@@ -124,13 +118,13 @@ public class ImageDisplay extends BaseActivity {
                 JSONObject spacePicData = new JSONObject(result);
                 publishProgress(25);
                 // get values
-                imgTitle = String.valueOf(spacePicData.getString("title"));
-                imgDate = String.valueOf(spacePicData.getString("date"));
+                imgTitle = spacePicData.getString("title");
+                imgDate = spacePicData.getString("date");
                 publishProgress(50);
-                imgURL = String.valueOf(spacePicData.getString("url"));
-                imgDetails = String.valueOf(spacePicData.getString("explanation"));
+                imgURL = spacePicData.getString("url");
+                imgDetails = spacePicData.getString("explanation");
                 publishProgress(75);
-                imgHDURL = String.valueOf(spacePicData.getString("hdurl"));
+                imgHDURL = spacePicData.getString("hdurl");
 
                 Log.i("ImageDisplay", "Image url is " + imgURL);
             } catch (Exception e) {

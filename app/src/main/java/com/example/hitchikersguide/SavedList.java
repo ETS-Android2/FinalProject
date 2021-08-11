@@ -1,27 +1,18 @@
 package com.example.hitchikersguide;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
 /**
@@ -76,12 +67,12 @@ public class SavedList extends BaseActivity {
             newRowValues.put(MyDBOpener.COL_HDURL, imgHDURL);
             newRowValues.put(MyDBOpener.COL_TITLE, imgTitle);
             newRowValues.put(MyDBOpener.COL_DETAIL, imgDetails);
-            long newID = myDB.insert(MyDBOpener.TABLE_NAME, null, newRowValues);
+//            long newID = myDB.insert(MyDBOpener.TABLE_NAME, null, newRowValues);
 
             pic = new SpacePic(imgDate, imgTitle, imgURL, imgHDURL, imgDetails);
             pictures.add(pic);
             myAdapter.notifyDataSetChanged();
-        };
+        }
 
         // Get details of an item on the list
         imgList.setOnItemClickListener((parent, view, position, id) -> {
@@ -134,14 +125,6 @@ public class SavedList extends BaseActivity {
                     .create().show();
                 return true;
             } );
-
-        //TODO: Progress bar will be on async task
-
-        // Load data from the database
-
-        // Toolbar as action bar
-        Toolbar tb = findViewById(R.id.toolbar);
-        setSupportActionBar(tb);
     }
 
     private void loadSavedPics() {
@@ -205,14 +188,10 @@ public class SavedList extends BaseActivity {
 
         @Override
         public View getView(int position, View myView, ViewGroup parent) {
-//            View newView = convertView;
             LayoutInflater inflater = getLayoutInflater();
 
             // make a new row
-//            if (myView == null) {
                 myView = inflater.inflate(R.layout.img_list_row, parent, false);
-//            }
-            // TODO: Add view holder pattern in note need to write code to account for delete if I use this
 
             //set text for new row
             TextView dateView = myView.findViewById(R.id.IL_Date);
@@ -224,48 +203,7 @@ public class SavedList extends BaseActivity {
             TextView titleView = myView.findViewById(R.id.IL_Title);
             titleView.setText(pictures.get(position).imgTitle);
 
-//            TextView hdurlView = myView.findViewById(R.id.IL_HDURL);
-//            hdurlView.setText(pictures.get(position).imgHDURL);
-//
-//            TextView detailsView = myView.findViewById(R.id.IL_Details);
-//            detailsView.setText(pictures.get(position).imgDetails);
-
-            // return new row to be added to table
             return myView;
         }
     }
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        //Inflater to inflate menu items in toolbar
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.toolbar_layout, menu);
-//        return true;
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        //new Intents that direct to each activity
-//        Intent image = new Intent(this, ImageDisplay.class);
-//        Intent jokes = new Intent(this, Jokes.class);
-//        Intent saved = new Intent(this, SavedList.class);
-//        Intent main = new Intent(this, MainActivity.class);
-//
-//        //switch cases for toolbar icons, direct to each activity
-//        //depending on icon selected by user
-//        switch(item.getItemId()) {
-//            case R.id.ufo:
-//                startActivity(image);
-//                break;
-//            case R.id.towel:
-//                startActivity(jokes);
-//                break;
-//            case R.id.comet:
-//                startActivity(saved);
-//                break;
-//            case R.id.number:
-//                startActivity(main);
-//                break;
-//        }
-//        return true;
-//    }
 }

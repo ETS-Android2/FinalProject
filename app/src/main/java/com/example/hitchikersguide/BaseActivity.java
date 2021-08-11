@@ -16,8 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.google.android.material.navigation.NavigationView;
 
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -76,8 +74,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
-
-
     }
 
 
@@ -99,7 +95,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         Intent DatePicker = new Intent(this, DatePicker.class);
         Intent Everything = new Intent(this, Jokes.class);
 
-        Intent Home = new Intent(this, MainActivity.class);
+//        Intent Home = new Intent(this, MainActivity.class);
 
         //switch cases for toolbar icons, direct to each activity
         //depending on icon selected by user
@@ -184,12 +180,13 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawerLayout = findViewById(R.id.drawer);
         drawerLayout.closeDrawer(GravityCompat.START);
 
+        Intent Home = new Intent(this, MainActivity.class);
+
         Intent GetImage = new Intent(this, ImageDisplay.class);
         Intent UserDetails = new Intent(this, UserDetails.class);
         Intent ImageList = new Intent(this, SavedList.class);
         Intent DatePicker = new Intent(this, DatePicker.class);
         Intent Everything = new Intent(this, Jokes.class);
-        Intent Home = new Intent(this, MainActivity.class);
 
         //switch cases for toolbar icons, direct to each activity
         //depending on icon selected by user

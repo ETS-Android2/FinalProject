@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -71,7 +72,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 title = getString(R.string.JK_title);
                 break;
         }
-        nav_title.setText(title);
+        nav_title.setText(title + " " + BuildConfig.VERSION_CODE);
 
         navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
@@ -174,7 +175,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                     okButton.setBackgroundColor(getResources().getColor(R.color.hh_blue));
                     okButton.setTextColor(getResources().getColor(R.color.hh_orange));
                 }
-                // Make the Title Pretty
         }
         return true;
     }
@@ -267,9 +267,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                     okButton.setBackgroundColor(getResources().getColor(R.color.hh_blue));
                     okButton.setTextColor(getResources().getColor(R.color.hh_orange));
                 }
-                // Make the Title Pretty
         }
         return true;
     }
-
 }

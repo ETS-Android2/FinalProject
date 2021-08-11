@@ -1,29 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Activity Titles   -->
     <string name="app_name">Hitchiker\'s Guide</string>
+    <string name="nav_main">Welcome Page</string>
     <string name="nav_ufo">Get Image</string>
     <string name="nav_towel">User Details</string>
     <string name="nav_comet">Image List</string>
-    <string name="nav_main">Welcome Page</string>
+    <string name="nav_calendar">Date Picker</string>
+    <string name="nav_everything">Everything</string>
+
+    <!-- General Strings   -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <!-- Saved List   -->
     <string name="SL_Alert_msg1">selected row is:&#160;</string>
     <string name="SL_Alert_Title">Do you want to delete this picture?</string>
     <string name="SL_Alert_msg2">selected Database is:&#160;</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
+
+    <!-- Buttons   -->
+    <string name="ID_PickImage">Choose Date</string>
+    <string name="save_image">Save Image</string>
+    <string name="JK_answer">Get Answer</string>
+    <string name="FD_Hide">HIDE</string>
+    <string name="dismiss">DISMISS</string>
+
     <string name="don_t_panic">Don\'t Panic</string>
     <string name="mainImageDescription">Hitchhiker\'s thumb in front ot a planet</string>
     <string name="login">Login</string>
-    <string name="user_name">Arthur</string>
+    <string name="user_name">Arthur Dent</string>
     <string name="jokes_page">Jokes Page</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
-    <string name="save_image">Save Image</string>
-    <string name="ID_PickImage">Choose Date</string>
-    <string name="FD_Hide">HIDE</string>
-    <string name="dismiss">DISMISS</string>
     <string name="JK_getjoke">Tell Me A Joke</string>
-    <string name="JK_answer">Get Answer</string>
-    <string name="nav_calendar">Date Picker</string>
-    <string name="nav_everything">Everything</string>
 
     <!-- Help Strings   -->
     <string name="help">Help</string>
@@ -69,13 +78,15 @@
         you may think it\'s a long way down the road to the chemist\'s,
         but that\'s just peanuts to space.</string>
 
-    <string name="MA_title">Welcome Page Version 42.0</string>
-    <string name="ID_title">Get Image Version 42.0</string>
-    <string name="UD_title">User Details Version 42.0</string>
-    <string name="SL_title">Image List Version 42.0</string>
-    <string name="DP_title">Date Picker Version 42.0</string>
-    <string name="JK_title">Everything Version 42.0</string>
+    <string name="MA_title">Welcome Page Version</string>
+    <string name="ID_title">Get Image Version</string>
+    <string name="UD_title">User Details Version</string>
+    <string name="SL_title">Image List Version</string>
+    <string name="DP_title">Date Picker Version</string>
+    <string name="JK_title">Everything Version</string>
     <string name="start_date">\"2015-01-01\"</string>
 
-
+    <string name="url_hdr">Image URL</string>
+    <string name="hdurl_hdr">High Definition URL</string>
+    <string name="towel_quote">A towel is about the most massively useful thing an interstellar hitchhiker can have.</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -35,10 +36,11 @@
         app:layout_constraintTop_toBottomOf="@+id/ID_Title"
         android:layout_marginTop="@dimen/top_margin"
         android:textAlignment="center"
+        android:textColor="@color/hh_orange"
         android:textSize="@dimen/bigger_para_text"/>
 
     <TextView
-        android:id="@+id/ID_Url"
+        android:id="@+id/ID_Url_hdr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -47,7 +49,35 @@
         app:layout_constraintTop_toBottomOf="@+id/ID_Date"
         android:layout_marginTop="@dimen/top_margin"
         android:textAlignment="center"
+        android:textSize="@dimen/smaller_para_text"
+        android:textColor="@color/hh_green"
+        android:text="@string/url_hdr"/>
+
+    <TextView
+        android:id="@+id/ID_Url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ID_Url_hdr"
+        android:layout_marginTop="12sp"
+        android:textAlignment="center"
         android:textSize="@dimen/smaller_para_text"/>
+
+    <TextView
+        android:id="@+id/ID_HDUrl_hdr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ID_Url"
+        android:layout_marginTop="@dimen/top_margin"
+        android:textAlignment="center"
+        android:textSize="@dimen/smaller_para_text"
+        android:textColor="@color/hh_green"
+        android:text="@string/hdurl_hdr"/>
 
     <TextView
         android:id="@+id/ID_HDurl"
@@ -57,33 +87,17 @@
         android:autoLink="web"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ID_Url"
-        android:layout_marginTop="@dimen/top_margin"
+        app:layout_constraintTop_toBottomOf="@+id/ID_HDUrl_hdr"
+        android:layout_marginTop="12sp"
         android:textSize="@dimen/smaller_para_text"
         android:textAlignment="center"
-        android:textColor="@color/hh_blue"/>
+        android:textColorLink="@color/hh_blue"/>
 
-<!--    <TextView-->
-<!--        android:id="@+id/ID_Detail"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/ID_HDurl" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/ID_PickDate"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/ID_PickImage"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent" />-->
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         app:layout_constraintBottom_toTopOf="@id/ID_SaveImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />

@@ -1,11 +1,11 @@
 package com.example.hitchikersguide;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Random;
@@ -71,8 +71,10 @@ public class Jokes extends BaseActivity {
             JK_show_joke.setText(jokes[num][0]);
             String answer = jokes[num][1];
 
-            // Get joke answer
-            JK_answer.setOnClickListener(v -> Snackbar.make(JK_show_joke, answer, Snackbar.LENGTH_LONG).show());
+
+            // Get joke answer (to display at the snack spot)
+            final View snackspot = findViewById(R.id.snackbar_anchor);
+            JK_answer.setOnClickListener(v -> Snackbar.make(snackspot, answer, Snackbar.LENGTH_LONG).show());
 
         });
     }

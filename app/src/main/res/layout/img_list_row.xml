@@ -1,29 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/IL_preview"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/comet" />
+        android:orientation="horizontal" >
 
-    <TextView
-        android:id="@+id/IL_Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="5sp"
-        android:gravity="center_horizontal"/>
+        <ImageView
+            android:id="@+id/IL_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/comet" />
 
-    <TextView
-        android:id="@+id/IL_Date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/IL_Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:layout_marginStart="5sp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/hh_orange"
+                android:textSize="@dimen/smaller_para_text"/>
+
+            <TextView
+                android:id="@+id/IL_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="5sp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/hh_green"
+                android:textSize="@dimen/smaller_para_text" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/IL_URL"
@@ -33,23 +54,12 @@
         android:layout_marginStart="5sp"
         android:gravity="center_horizontal"/>
 
-    <TextView
-        android:id="@+id/IL_Details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="5sp"
-        android:textAlignment="textStart" />
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/hh_blue"
+        android:layout_marginTop="4sp"
+        android:layout_marginHorizontal="@dimen/top_margin"/>
 
-    <TextView
-        android:id="@+id/IL_HDURL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:textAlignment="textStart"
-        android:layout_marginStart="5sp" />
-
-    <!--    //android:background="@drawable/turtle_speech"-->
-<!--    //android:textColor="@color/black"-->
-
-</TableLayout>
+</LinearLayout>

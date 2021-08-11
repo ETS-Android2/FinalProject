@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Activity Titles   -->
     <string name="app_name">Guide de l\'auto-stoppeur</string>
-    <string name="nav_ufo"></string>
-    <string name="nav_towel"></string>
-    <string name="nav_comet">Images enregistrées</string>
-    <string name="nav_main">Page d\'accueil</string>
-    <string name="SL_Alert_msg1">la ligne sélectionnée est</string>
-    <string name="SL_Alert_Title">Voulez-vous effacer cette image?</string>
-    <string name="SL_Alert_msg2">selected Database is</string>
-    <string name="yes">Oui</string>
-    <string name="no">Non</string>
-    <string name="don_t_panic">Ne panique pas %s</string>
-    <string name="mainImageDescription">Pouce d\'auto-stoppeur devant une planète</string>
-    <string name="login">Entrer</string>
-    <string name="user_name">Nom:</string>
-    <string name="jokes_page">Blagues</string>
-    <string name="open">Ouvert</string>
-    <string name="close">Fermer</string>
-    <string name="save_image">Enregistrer l\'image</string>
-    <string name="ID_PickImage">Choisissez une image</string>
-    <string name="FD_Hide">CACHER</string>
-    <string name="dismiss">REJETER</string>
-    <string name="JK_getjoke">Raconte moi une blague</string>
-    <string name="JK_answer">Obtenez une réponse</string>
+    <string name="nav_main">Page d\'Accueil</string>
+    <string name="nav_ufo">Obtenir une Image</string>
+    <string name="nav_towel">Détails de l\'Utilisateur</string>
+    <string name="nav_comet">liste d\'Images</string>
     <string name="nav_calendar">Sélecteur de date</string>
     <string name="nav_everything">Tout</string>
 
+    <!-- General Strings   -->
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="open">Ouvert</string>
+    <string name="close">Fermer</string>
+
+    <!-- Saved List   -->
+    <string name="SL_Alert_msg1">la ligne sélectionnée est</string>
+    <string name="SL_Alert_Title">Voulez-vous effacer cette image?</string>
+    <string name="SL_Alert_msg2">selected Database is</string>
+
+    <!-- Buttons   -->
+    <string name="ID_PickImage">Choisissez une image</string>
+    <string name="save_image">Enregistrer l\'image</string>
+    <string name="JK_answer">Obtenez une réponse</string>
+    <string name="FD_Hide">CACHER</string>
+    <string name="dismiss">REJETER</string>
+
+    <string name="don_t_panic">Ne panique pas</string>
+    <string name="mainImageDescription">Pouce d\'auto-stoppeur devant une planète</string>
+    <string name="login">Entrer</string>
+    <string name="user_name">Arthur Dent</string>
+    <string name="jokes_page">Blagues</string>
+    <string name="JK_getjoke">Raconte moi une blague</string>
+
     <!-- Help Strings   -->
-    <string name="help">Help</string>
+    <string name="help">Aide</string>
     <string name="help_main">
         C\'est drôle, juste au moment où vous pensez que la vie ne peut pas être pire, c\'est soudainement le cas.\n
         Ceci est le guide de l\'auto-stoppeur.\n
@@ -57,20 +65,25 @@
         Je ne l\'apprécierai pas.
     </string>
     <string name="help_message"></string>
-
-
-    <string name="profile_saying">“Space is big. You just won\'t believe how vastly, hugely, mind-bogglingly big it is. I mean, you may think it/\'s a long way down the road to the chemist/\'s, but that/\'s just peanuts to space.”</string>
-
     <string name="alert_title">Conseils utiles de Marvin</string>
     <string name="ok">Merci Marvin!</string>
 
-    <string name="MA_title">Page d\'accueil Version 42.0</string>
-    <string name="ID_title">Obtenir une image Version 42.0</string>
-    <string name="UD_title">Détails de l\'utilisateur Version 42.0</string>
-    <string name="SL_title">Liste d\'images List Version 42.0</string>
-    <string name="DP_title">Sélecteur de date Version 42.0</string>
-    <string name="JK_title">Tout Version 42.0</string>
+    <string name="profile_saying">L\'espace est grand. Vous ne croirez tout simplement pas à quel
+        point il est énorme, énorme, époustouflant. Je veux dire,
+    vous pouvez penser que c\'est un long chemin vers la pharmacie,
+        mais ce n\'est que des cacahuètes dans l\'espace.</string>
+
+
+    <string name="MA_title">Page d\'accueil Version</string>
+    <string name="ID_title">Obtenir une image Version</string>
+    <string name="UD_title">Détails de l\'utilisateur Version</string>
+    <string name="SL_title">Liste d\'images List Version</string>
+    <string name="DP_title">Sélecteur de date Version</string>
+    <string name="JK_title">Tout Version</string>
     <string name="start_date">\"2015-01-01\"</string>
 
-
+    <string name="url_hdr">URL de l\'image</string>
+    <string name="hdurl_hdr">URL haute définition</string>
+    <string name="towel_quote">Une serviette est la chose la plus utile qu\'un auto-stoppeur
+        interstellaire puisse avoir.</string>
 </resources>

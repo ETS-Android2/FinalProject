@@ -8,12 +8,13 @@
     android:orientation="vertical"
     tools:context=".UserDetails">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/UD_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/top_margin"
         android:layout_gravity="center"
+        android:backgroundTint="@color/white"
         app:srcCompat="@drawable/star_profile"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,7 +53,8 @@
         android:layout_height="1dp"
         android:layout_marginTop="18dp"
         android:layout_marginBottom="36dp"
-        android:background="?android:attr/listDivider" />
+        android:background="@color/hh_blue"
+        android:layout_marginHorizontal="@dimen/top_margin" />
 
     <TextView
         android:id="@+id/UD_Saying"

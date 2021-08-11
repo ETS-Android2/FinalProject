@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class UserDetails extends BaseActivity {
     private SharedPreferences prefs;
@@ -35,12 +36,13 @@ public class UserDetails extends BaseActivity {
 
         // Initialize UserName with username from shared prefs
         TextView userName = findViewById(R.id.UD_UserName);
-        userName.setText(loginName);
+        if (!loginName.isEmpty()){
+            userName.setText(loginName);
+        }
 
         // Initialize edit button and set on click listener
-        ImageButton update = findViewById(R.id.UD_UpdateButton);
-
-        update.setOnClickListener(click -> {
+        ImageButton updateProfile = findViewById(R.id.UD_UpdateButton);
+        updateProfile.setOnClickListener(click -> {
             // create an alert builder
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Name");
@@ -69,14 +71,16 @@ public class UserDetails extends BaseActivity {
                 okButton.setBackgroundColor(getResources().getColor(R.color.hh_blue));
                 okButton.setTextColor(getResources().getColor(R.color.hh_orange));
             }
-//        // do something with the data coming from the AlertDialog
-//    saveSharedPrefs(USRNAME, name.getText().toString());
-
         });
 
-//        private void sendDialogDataToActivity(String data) {
-//            Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
-//        }
+        // Initialize Profile Picture and Make a Toast
+        ImageView profilePic = findViewById(R.id.UD_imageView);
+        profilePic.setOnClickListener(click -> {
+            Toast.makeText(getBaseContext(), R.string.towel_quote, Toast.LENGTH_LONG).show();
+        });
+
+
+
     }
 
 

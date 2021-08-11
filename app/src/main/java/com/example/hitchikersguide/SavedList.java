@@ -53,15 +53,7 @@ public class SavedList extends BaseActivity {
         FrameLayout contentFrameLayout = findViewById(R.id.content_frame);
         getLayoutInflater().inflate(R.layout.activity_saved_list, contentFrameLayout);
 
-//        setContentView(R.layout.activity_saved_list);
-
         isTablet = findViewById(R.id.fragmentLocation) != null;
-
-        TextView listTitle = findViewById(R.id.IL_Title);
-        TextView listDate = findViewById(R.id.IL_Date);
-        TextView listURL = findViewById(R.id.IL_URL);
-        TextView listDetails = findViewById(R.id.IL_Details);
-        TextView listHDURL = findViewById(R.id.IL_HDURL);
 
         // Listview
         ListView imgList = findViewById(R.id.SL_ListOfImages);
@@ -113,33 +105,35 @@ public class SavedList extends BaseActivity {
 
         // Remove an item from the list
         imgList.setOnItemLongClickListener(
-                // Create a Dialog
-                (parent, view, position, id) -> {
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                    alertDialogBuilder.setTitle(getResources().getString(R.string.SL_Alert_Title))
+            // Create a Dialog
+            (parent, view, position, id) -> {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                alertDialogBuilder.setTitle(getResources().getString(R.string.SL_Alert_Title))
 
-                            // Message
-                            .setMessage(getResources().getString(R.string.SL_Alert_msg1) + position + "\n"
-                                    + getResources().getString(R.string.SL_Alert_msg2) + id)
+                    // Message
+                    .setMessage(getResources().getString(R.string.SL_Alert_msg1) + position + "\n"
+                            + getResources().getString(R.string.SL_Alert_msg2) + id)
 
-                            // Yes Action
-                            .setPositiveButton(R.string.yes, (click, arg) -> {
-                                pic = pictures.get(position);
-                                pictures.remove(position);
-                                deleteSpacePic(pic);
-                                myAdapter.notifyDataSetChanged();
-                                if (isTablet) {
-                                    this.getSupportFragmentManager().beginTransaction().remove(getSupportFragmentManager().findFragmentById(R.id.fragmentLocation)).commit();
-                                }
-                            })
+                    // Yes Action
+                    .setPositiveButton(R.string.yes, (click, arg) -> {
+                        pic = pictures.get(position);
+                        pictures.remove(position);
+                        deleteSpacePic(pic);
+                        myAdapter.notifyDataSetChanged();
+                        if (isTablet) {
+                            this.getSupportFragmentManager().beginTransaction()
+                                    .remove(getSupportFragmentManager().findFragmentById(R.id.fragmentLocation))
+                                    .commit();
+                        }
+                    })
 
-                            // No action
-                            .setNegativeButton(R.string.no, (click, arg) -> { })
+                    // No action
+                    .setNegativeButton(R.string.no, (click, arg) -> { })
 
-                            //Show the dialog
-                            .create().show();
-                    return true;
-                } );
+                    //Show the dialog
+                    .create().show();
+                return true;
+            } );
 
         //TODO: Progress bar will be on async task
 
@@ -194,7 +188,6 @@ public class SavedList extends BaseActivity {
 
         @Override
         public int getCount() {
-
             return pictures.size();
         }
 

@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -55,10 +54,6 @@ public class ImageDisplay extends BaseActivity {
         // TODO: Image, Image Description, Date, Link to HDURL
         // TODO: Snackbar to say are you sure you want to leave this page to open the HDURL
 
-//        // Initialize Date Picker
-//        DatePicker picker;
-//        picker = findViewById(R.id.ID_datePicker);
-
         Button saveImage = findViewById(R.id.ID_SaveImage);
         Intent passImg = new Intent(getBaseContext(), SavedList.class);
         saveImage.setOnClickListener(click -> {
@@ -70,29 +65,9 @@ public class ImageDisplay extends BaseActivity {
             startActivity(passImg);
         });
 
-//        Button dateButton = findViewById(R.id.ID_PickDate);
-//        dateButton.setOnClickListener(click -> {
-//
-//            newDate = picker.getYear() + "-" + (picker.getMonth() + 1 )+ "-" + picker.getDayOfMonth();
-//            Log.i("DatePicker: ", "date selected is: " + newDate);
-
-            // Open AsyncTask
-//            String picADayURL = "https://api.nasa.gov/planetary/apod?api_key=DU59VMplWgJa1xFzZbTuMZgLkdcVeoZkJZu21esv&date=" + newDate;
-//            NASAQuery getImageDetails = new NASAQuery();
-//            getImageDetails.execute(picADayURL);
-
-//        });
-
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
         progressBar.setProgress(0);
-
-        //Mod 3 Intents
-        //    String url = "http://www.algonquincollege.com";
-        //    Intent i = new Intent(Intent.ACTION_VIEW);
-        //    i.setData( Uri.parse(url) );
-        //    startActivity(i);
-//        String date = "2021-07-01";
 
         // Define fields
         curDate = findViewById(R.id.ID_Date);
@@ -135,7 +110,8 @@ public class ImageDisplay extends BaseActivity {
 
                 //JSON reading:
                 //Build the entire string response:
-                BufferedReader reader = new BufferedReader(new InputStreamReader(response, "UTF-8"), 8);
+                BufferedReader reader = new BufferedReader(
+                        new InputStreamReader(response, "UTF-8"), 8);
                 StringBuilder sb = new StringBuilder();
 
                 String line = null;
@@ -146,34 +122,23 @@ public class ImageDisplay extends BaseActivity {
 
                 // convert string to JSON:
                 JSONObject spacePicData = new JSONObject(result);
-
+                publishProgress(25);
                 // get values
                 imgTitle = String.valueOf(spacePicData.getString("title"));
                 imgDate = String.valueOf(spacePicData.getString("date"));
+                publishProgress(50);
                 imgURL = String.valueOf(spacePicData.getString("url"));
                 imgDetails = String.valueOf(spacePicData.getString("explanation"));
+                publishProgress(75);
                 imgHDURL = String.valueOf(spacePicData.getString("hdurl"));
 
-                publishProgress(25);
                 Log.i("ImageDisplay", "Image url is " + imgURL);
             } catch (Exception e) {
                 Log.e("Error", e.getMessage());
             } // end first try block
+            publishProgress(100);
 
-//
-
-//TODO: Update progress bars
             //TODO: error coding for when not a picture
-            //TODO: remove URL from display
-//            publishProgress(25);
-//            minTemp = "Low: " + xpp.getAttributeValue(null, "min")
-//                    + " \u2103";
-//            Log.i("ForecastQuery: ", "minimum temperature is " + minTemp);
-//            publishProgress(50);
-//            maxTemp = "High: " + xpp.getAttributeValue(null, "max")
-//                    + " \u2103";
-//            Log.i("ForecastQuery: ", "maximum temperature is " + maxTemp);
-//            publishProgress(75);
             return "Done";
         }
 
@@ -187,12 +152,10 @@ public class ImageDisplay extends BaseActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             Picasso.get().load(imgURL).into(curImage);
-//            curImage.setImageBitmap(myPic);
             curDate.setText(imgDate);
             curTitle.setText(imgTitle);
             curURL.setText(imgURL);
             curHDURL.setText(imgHDURL);
-//            curDetails.setText(imgDetails);
             progressBar.setVisibility(View.INVISIBLE);
         }
     }

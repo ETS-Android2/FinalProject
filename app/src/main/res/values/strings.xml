@@ -24,6 +24,7 @@
     <string name="ID_PickImage">Choose Date</string>
     <string name="save_image">Save Image</string>
     <string name="JK_answer">Get Answer</string>
+    <string name="FD_View">VIEW</string>
     <string name="FD_Hide">HIDE</string>
     <string name="dismiss">DISMISS</string>
 
@@ -45,12 +46,12 @@
     </string>
     <string name="help_get_image">
         Here\'s your current picture of the night sky. How I hate the night.\n
-        Use the date picker and "PICK AN IMAGE" button to choose a new image, use the "SAVE IMAGE" button
-        to add an image to the Image list.\n
+        Use the SAVE IMAGE button to save an image to the Image List.\n
         Wretched, isn\'t it?
     </string>
     <string name="help_user_details">
         User profile can been found and updated here.\n
+        Use the pencil icon to edit username, and click the photo for a space travel tip.\n
         I don\'t know why you\'d bother.
     </string>
     <string name="help_image_list">
@@ -60,13 +61,13 @@
         This is the sort of thing you lifeforms enjoy, is it?
     </string>
     <string name="help_date_picker">
-        Pick a date to find a new image.\n
+        Pick a date to find a new image, then click the CHOOSE DATE button to view the image.\n
         It won\'t make you happy though.
     </string>
     <string name="help_everything">
         I think you ought to know I\’m feeling very depressed.\n
         Space Jokes make me sad.\n
-        Click on Zaphod to get a new joke.\n
+        Click on Zaphod to get a new joke, click the GET ANSWER button to see the answer.\n
         I won\'t enjoy it.
     </string>
     <string name="help_message"></string>

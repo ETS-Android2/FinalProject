@@ -2,6 +2,7 @@ package com.example.hitchikersguide;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -24,12 +25,10 @@ public class DetailsFragment extends Fragment {
 
     private Bundle dataFromActivity;
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -64,6 +63,16 @@ public class DetailsFragment extends Fragment {
         }
     }
 
+    /** Gets item details passed from SavedList
+     * Sets TextView text with Strings passed
+     * Passes image details to ImageDisplay when view button is clicked
+     * Closes fragment and goes back to SavedList when hide button is clicked
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -80,6 +89,19 @@ public class DetailsFragment extends Fragment {
 
         TextView imgHDURL = result.findViewById(R.id.FD_HDURL);
         imgHDURL.setText(dataFromActivity.getString("HDURL"));
+
+        Button viewButton = result.findViewById(R.id.FD_View);
+        viewButton.setOnClickListener(click -> {
+            Intent imgView = new Intent(getContext(), ImageDisplay.class);
+
+            imgView.putExtra("Date", dataFromActivity.getString("Date"));
+            imgView.putExtra("Title", dataFromActivity.getString("Title"));
+            imgView.putExtra("URL", dataFromActivity.getString("URL"));
+            imgView.putExtra("HDURL", dataFromActivity.getString("HDURL"));
+            imgView.putExtra("Details", dataFromActivity.getString("Details"));
+
+            startActivity(imgView);
+        });
 
         Button hideButton = result.findViewById(R.id.FD_Hide);
         hideButton.setOnClickListener(click -> {

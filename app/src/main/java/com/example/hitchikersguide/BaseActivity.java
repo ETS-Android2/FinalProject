@@ -18,8 +18,22 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
 
+/** BaseActivity created to include toolbar/nav drawer functions
+ * All activities extend BaseActivity to include toolbar and nav
+ * Links to all other activities through the icons
+ * Includes help messages for each activity
+ *
+ * @author Brianna Guerin
+ * @author Jenne Stamplecoskie
+ */
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    /** Sets toolbar and nav drawer, adds header to the nav drawer
+     * with appropriate page title
+     * Add colour to nav drawer icons
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,8 +90,11 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-
-    // TODO: Finish JavaDoc
+    /**Inflate toolbar menu items
+     *
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Inflater to inflate menu items in toolbar
@@ -86,6 +103,13 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    /** Sets action for each menu item if clicked
+     * Includes intents that direct to each activity
+     * Includes help message corresponding to current activity
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         //new Intents that direct to each activity
@@ -95,10 +119,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         Intent DatePicker = new Intent(this, DatePicker.class);
         Intent Everything = new Intent(this, Jokes.class);
 
-//        Intent Home = new Intent(this, MainActivity.class);
-
-        //switch cases for toolbar icons, direct to each activity
-        //depending on icon selected by user
+        //Switch cases for toolbar icons, direct to each activity
+        //Depending on icon selected by user
         switch(item.getItemId()) {
             case R.id.ufo:
                 startActivity(GetImage);
@@ -175,6 +197,13 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    /** Sets actions for nav drawer icons if clicked
+     * Includes intents that direct to each activity
+     * Includes help message corresponding to current activity
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         DrawerLayout drawerLayout = findViewById(R.id.drawer);
@@ -188,8 +217,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         Intent DatePicker = new Intent(this, DatePicker.class);
         Intent Everything = new Intent(this, Jokes.class);
 
-        //switch cases for toolbar icons, direct to each activity
-        //depending on icon selected by user
+        //Switch cases for toolbar icons, direct to each activity
+        //Depending on icon selected by user
         switch(item.getItemId()) {
             case R.id.nav_home:
                 startActivity(Home);
@@ -254,7 +283,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                     }
                 });
 
-                // the alert dialog
+                // The alert dialog
                 AlertDialog dialog = builder.create();
                 dialog.show();
 

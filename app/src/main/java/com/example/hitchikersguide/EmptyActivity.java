@@ -15,6 +15,11 @@ import android.os.Bundle;
  */
 public class EmptyActivity extends AppCompatActivity {
 
+    /** EmptyActivity used to view fragment details if viewed on phone
+     * Displays data passed from SavedList
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

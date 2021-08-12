@@ -23,6 +23,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * Image Display Activity shows the selected image and its related details
  * Link to HDURL
+ * Allows user to save image to SavedList
  *
  * @author Brianna Guerin
  * @author Jenne Stamplecoskie
@@ -50,8 +51,6 @@ public class ImageDisplay extends BaseActivity {
         }
         Log.i("DatePicker: ", "date selected is: " + newDate);
 //        setContentView(R.layout.activity_image_display);
-        // TODO: Image, Image Description, Date, Link to HDURL
-        // TODO: Snackbar to say are you sure you want to leave this page to open the HDURL
 
         Button saveImage = findViewById(R.id.ID_SaveImage);
         Intent passImg = new Intent(getBaseContext(), SavedList.class);
@@ -81,6 +80,14 @@ public class ImageDisplay extends BaseActivity {
                     .setNegativeButton(R.string.dismiss, (click, arg) -> { })
                     .create().show();
         });
+
+        Intent imgView = getIntent();
+        if (imgView != null) {
+            curDate.setText(imgView.getStringExtra("Date"));
+            curTitle.setText(imgView.getStringExtra("Title"));
+            curURL.setText(imgView.getStringExtra("URL"));
+            curHDURL.setText(imgView.getStringExtra("HDURL"));
+        }
 
         // Open AsyncTask
         String picADayURL = "https://api.nasa.gov/planetary/apod?api_key=DU59VMplWgJa1xFzZbTuMZgLkdcVeoZkJZu21esv&date=" + newDate;

@@ -13,6 +13,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+/** UserDetails page allows user to save/edit their name
+ * Uses SharedPrefs to save input and update message on MainActivity
+ * Includes a Toast message when the image is clicked
+ *
+ * @author Brianna Guerin
+ * @author Jenne Stamplecoskie
+ */
 
 public class UserDetails extends BaseActivity {
     private SharedPreferences prefs;
@@ -76,12 +83,7 @@ public class UserDetails extends BaseActivity {
         profilePic.setOnClickListener(click -> {
             Toast.makeText(getBaseContext(), R.string.towel_quote, Toast.LENGTH_LONG).show();
         });
-
-
-
     }
-
-
 
     /**
      * Saves users login name to share preferences for next opening of app

@@ -24,6 +24,7 @@
     <string name="ID_PickImage">Choisissez une image</string>
     <string name="save_image">Enregistrer l\'image</string>
     <string name="JK_answer">Obtenez une réponse</string>
+    <string name="FD_View">VUE</string>
     <string name="FD_Hide">CACHER</string>
     <string name="dismiss">REJETER</string>
 
@@ -43,25 +44,33 @@
         C\'est rarement le cas.
     </string>
     <string name="help_get_image">
-        Comme je déteste la nuit.\n
-        Voici votre image actuelle du ciel nocturne.
+        Voici votre image actuelle du ciel nocturne. Comme je déteste la nuit.\n
+        Utilisez le bouton ENREGISTRER L\'IMAGE pour enregistrer une image dans la liste d\'images.\n
+        Misérable, n\'est-ce pas ?
     </string>
     <string name="help_user_details">
         Le profil de l\'utilisateur peut être trouvé et mis à jour ici.\n
+        Utilisez l\'icône en forme de crayon pour modifier le nom d\'utilisateur et
+        cliquez sur la photo pour obtenir un conseil de voyage spatial.
         Je ne sais pas pourquoi tu t\'embêterais.
     </string>
     <string name="help_image_list">
         Me voici, cerveau de la taille d\'une planète,\n
-        et ils me disent de vous amener à la liste des images que vous avez enregistrées.
+        et ils me disent de vous amener à la liste des images que vous avez enregistrées.\n
+        Cliquez brièvement sur un élément pour afficher les détails, cliquez longuement pour le supprimer de la liste.\n
+        C\'est le genre de chose que les formes de vie apprécient, n\'est-ce pas ?
     </string>
     <string name="help_date_picker">
         Choisissez une date pour trouver une nouvelle image.\n
+        Choisissez une date pour trouver une nouvelle image, puis cliquez sur le bouton
+        CHOISIR LA DATE pour afficher l\'image.\n
         Cela ne vous rendra pas heureux cependant.
     </string>
     <string name="help_everything">
         Je pense que tu devrais savoir que je me sens très déprimé.\n
         Les blagues sur l\'espace me rendent triste.\n
-        Cliquez sur Zaphod pour obtenir une nouvelle blague.\n
+        Cliquez sur Zaphod pour obtenir une nouvelle blague,
+        cliquez sur le bouton "OBTENIR LA RÉPONSE" pour voir la réponse.\n
         Je ne l\'apprécierai pas.
     </string>
     <string name="help_message"></string>

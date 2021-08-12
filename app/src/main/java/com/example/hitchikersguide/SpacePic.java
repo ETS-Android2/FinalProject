@@ -52,10 +52,7 @@ public class SpacePic {
     }
 
     public long getImgID() {
+
         return imgID;
     }
-    // TODO: save title for the image
-    // TODO: open HDURL in web browser
-    // TODO: DO we make variables private and use getter methods? Probably should
-
 }

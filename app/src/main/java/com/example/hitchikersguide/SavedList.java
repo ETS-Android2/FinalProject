@@ -17,7 +17,8 @@ import java.util.ArrayList;
 
 /**
  * Save List Activity holds the list of saved images
- * Links to joke page through Jokes Button
+ * Includes fragment to view item details
+ * Allows user to remove from list and database
  *
  * @author Brianna Guerin
  * @author Jenne Stamplecoskie
@@ -46,7 +47,6 @@ public class SavedList extends BaseActivity {
 
         isTablet = findViewById(R.id.fragmentLocation) != null;
 
-        // Listview
         ListView imgList = findViewById(R.id.SL_ListOfImages);
         MyAdapter myAdapter = new MyAdapter();
         imgList.setAdapter(myAdapter);
@@ -78,9 +78,11 @@ public class SavedList extends BaseActivity {
         imgList.setOnItemClickListener((parent, view, position, id) -> {
 
             Bundle dataToPass = new Bundle();
+            dataToPass.putString("Date", pictures.get(position).imgDate);
             dataToPass.putString("Title", pictures.get(position).imgTitle);
-            dataToPass.putString("Details", pictures.get(position).imgDetails);
+            dataToPass.putString("URL", pictures.get(position).imgURL);
             dataToPass.putString("HDURL", pictures.get(position).imgHDURL);
+            dataToPass.putString("Details", pictures.get(position).imgDetails);
 
             if (isTablet) {
                 DetailsFragment dFragment = new DetailsFragment();

@@ -34,6 +34,13 @@
         android:autoLink="web"/>
 
     <Button
+        android:id="@+id/FD_View"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/FD_View"
+        android:layout_above="@+id/FD_Hide" />
+
+    <Button
         android:id="@+id/FD_Hide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

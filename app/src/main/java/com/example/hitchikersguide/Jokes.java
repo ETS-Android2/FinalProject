@@ -10,8 +10,7 @@ import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.Random;
 
-/**
- * Jokes page displays selected space jokes. Cause we got jokes son.
+/** Jokes page displays selected space jokes. Cause we got jokes son.
  * Extends Base Activity to provide toolbar and nav drawer
  *
  * @author Brianna Guerin
@@ -70,7 +69,6 @@ public class Jokes extends BaseActivity {
 
             JK_show_joke.setText(jokes[num][0]);
             String answer = jokes[num][1];
-
 
             // Get joke answer (to display at the snack spot)
             final View snackspot = findViewById(R.id.snackbar_anchor);

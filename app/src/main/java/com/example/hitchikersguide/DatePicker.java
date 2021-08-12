@@ -7,13 +7,26 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import java.util.Date;
 
+/** DatePicker activity contains a date picker to select
+ * an image to view from that date
+ * Passes selected date to ImageDisplay to view image
+ *
+ * @author Brianna Guerin
+ * @author Jenne Stamplecoskie
+ */
 public class DatePicker extends BaseActivity {
 
+    /** Add DatePicker layout to BaseActivity
+     * Include date picker and Intent to pass
+     * image date to ImageDisplay class
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Inflate the Main Activity layout into the Base activity frame
+        // Inflate the Date Picker layout into the Base activity frame
         FrameLayout contentFrameLayout = findViewById(R.id.content_frame);
         getLayoutInflater().inflate(R.layout.activity_date_picker, contentFrameLayout);
 

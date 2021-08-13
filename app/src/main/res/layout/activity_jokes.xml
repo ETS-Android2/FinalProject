@@ -6,47 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".Jokes">
 
-    <ImageButton
-        android:id="@+id/JK_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top_margin"
-        android:background="@color/white"
-        android:src="@drawable/zaphod2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/JK_textView"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top_margin"
-        android:padding="8dp"
-        android:textAlignment="center"
-        android:textSize="@dimen/bigger_para_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/JK_image" />
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/snackbar_anchor"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/JK_textView">
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        android:text="Joke"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="177dp"
+        tools:layout_editor_absoluteY="126dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <Button
-        android:id="@+id/JK_answer"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/JK_answer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="@dimen/top_margin"/>
-
+        android:text="Get Answer"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="252dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

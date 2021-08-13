@@ -26,8 +26,6 @@ import java.util.ArrayList;
 public class SavedList extends BaseActivity {
     private ArrayList<SpacePic> pictures = new ArrayList<>();
     private SQLiteDatabase myDB;
-    private Cursor results;
-    private SpacePic curPic;
     String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;
     SpacePic pic;
     static boolean isTablet;
@@ -129,7 +127,12 @@ public class SavedList extends BaseActivity {
             } );
     }
 
+    /**
+     * Loads the pictures saved in the database into the image list
+     */
     private void loadSavedPics() {
+        Cursor results;
+        SpacePic curPic;
         // Connect to DB
         MyDBOpener dbOpen = new MyDBOpener(this);
         myDB = dbOpen.getWritableDatabase();
@@ -155,12 +158,12 @@ public class SavedList extends BaseActivity {
             // Create an image and add it to the arrayList
             curPic = new SpacePic(results.getLong(idColIdx), results.getString(dateColIdx),
                     results.getString(urlColIdx));
-            //TODO: Might need to check if these are empty... but should be ok
             curPic.setHDURL(results.getString(hdurlColIdx));
             curPic.setTitle(results.getString(titleColIdx));
             curPic.setDetails(results.getString(detailColIdx));
             pictures.add(curPic);
         }
+        results.close();
     }
     protected void deleteSpacePic(SpacePic pic) {
         myDB.delete(MyDBOpener.TABLE_NAME, MyDBOpener.COL_ID + "= ?", new String[] {Long.toString(pic.getImgID())});
@@ -193,7 +196,7 @@ public class SavedList extends BaseActivity {
             LayoutInflater inflater = getLayoutInflater();
 
             // make a new row
-                myView = inflater.inflate(R.layout.img_list_row, parent, false);
+            myView = inflater.inflate(R.layout.img_list_row, parent, false);
 
             //set text for new row
             TextView dateView = myView.findViewById(R.id.IL_Date);

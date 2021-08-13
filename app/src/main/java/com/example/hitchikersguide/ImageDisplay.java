@@ -35,6 +35,10 @@ public class ImageDisplay extends BaseActivity {
     ImageView curImage;
     String imgDate, imgTitle, imgURL, imgDetails, imgHDURL;
 
+    /**
+     * OnCreate function initializes widgets and listeners
+     * @param savedInstanceState - the state that the app was last saved in
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +54,6 @@ public class ImageDisplay extends BaseActivity {
             newDate = "2021-07-20";
         }
         Log.i("DatePicker: ", "date selected is: " + newDate);
-//        setContentView(R.layout.activity_image_display);
 
         Button saveImage = findViewById(R.id.ID_SaveImage);
         Intent passImg = new Intent(getBaseContext(), SavedList.class);
@@ -72,7 +75,6 @@ public class ImageDisplay extends BaseActivity {
         curTitle = findViewById(R.id.ID_Title);
         curURL = findViewById(R.id.ID_Url);
         curHDURL = findViewById(R.id.ID_HDurl);
-//        curDetails = findViewById(R.id.ID_Detail);
         curImage = findViewById(R.id.ID_imageView);
         curImage.setOnClickListener(v -> {
             AlertDialog.Builder details = new AlertDialog.Builder(this);
@@ -95,6 +97,12 @@ public class ImageDisplay extends BaseActivity {
         forecast.execute(picADayURL);
     }
 
+    /**
+     * NASA Query extends ASyncTask to query the NASA Image of the Day API
+     *
+     * @author Brianna Guerin
+     * @author Jenne Stamplecoskie
+     */
     private class NASAQuery extends AsyncTask<String, Integer, String> {
 
         @Override

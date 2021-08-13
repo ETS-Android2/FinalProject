@@ -15,10 +15,11 @@ import android.os.Bundle;
  */
 public class EmptyActivity extends AppCompatActivity {
 
-    /** EmptyActivity used to view fragment details if viewed on phone
+    /**
+     * EmptyActivity used to view fragment details if viewed on phone
      * Displays data passed from SavedList
      *
-     * @param savedInstanceState
+     * @param savedInstanceState - the state that the app was last saved in
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

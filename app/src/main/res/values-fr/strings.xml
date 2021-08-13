@@ -89,7 +89,7 @@
     <string name="SL_title">Liste d\'images List Version</string>
     <string name="DP_title">Sélecteur de date Version</string>
     <string name="JK_title">Tout Version</string>
-    <string name="start_date">\"2015-01-01\"</string>
+    <string name="start_date">\\"1995-06-01\"</string>
 
     <string name="url_hdr">URL de l\'image</string>
     <string name="hdurl_hdr">URL haute définition</string>

@@ -28,6 +28,15 @@ public class SpacePic {
         this.imgID = imgID;
     }
 
+    /**
+     *  Space Pic class holds the saved images of the day and their associated data.
+     *
+     * @param imgDate - the date of the image
+     * @param imgTitle - the title of the image
+     * @param imgURL - url to the image
+     * @param imgHDURL - high definition url to the image
+     * @param imgDetails - image description
+     */
     public SpacePic(String imgDate, String imgTitle, String imgURL, String imgHDURL, String imgDetails) {
         this.imgDate = imgDate;
         this.imgURL = imgURL;
@@ -36,21 +45,41 @@ public class SpacePic {
         this.imgHDURL = imgHDURL;
     }
 
+    /**
+     * Set the Title of the SpacePic
+     *
+     * @param title - Title to be set for SpacePic
+     */
     public void setTitle(String title){
 
         this.imgTitle = title;
     }
 
+    /**
+     * Set the Description of the SpacePic
+     *
+     * @param details - Description to be set for SpacePic
+     */
     public void setDetails(String details){
 
         this.imgDetails = details;
     }
 
+    /**
+     * Set the HD URL of the SpacePic
+     *
+     * @param hdurl - high definition URL to be set for SpacePic
+     */
     public void setHDURL(String hdurl){
 
         this.imgHDURL = hdurl;
     }
 
+    /**
+     * Get the Image ID
+     *
+     * @return - ImageID is returned
+     */
     public long getImgID() {
 
         return imgID;

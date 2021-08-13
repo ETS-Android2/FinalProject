@@ -72,9 +72,6 @@ public class MyDBOpener extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
-
-
     /**
      * This function gets called if the database version on your device is higher than VERSION_NUM.
      * It deletes the existing table and creates a new one. Note your saved data will not be

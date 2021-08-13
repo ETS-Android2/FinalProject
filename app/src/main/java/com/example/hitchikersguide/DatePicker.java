@@ -7,7 +7,8 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import java.util.Date;
 
-/** DatePicker activity contains a date picker to select
+/**
+ * DatePicker activity contains a date picker to select
  * an image to view from that date
  * Passes selected date to ImageDisplay to view image
  *
@@ -16,11 +17,12 @@ import java.util.Date;
  */
 public class DatePicker extends BaseActivity {
 
-    /** Add DatePicker layout to BaseActivity
+    /**
+     * Add DatePicker layout to BaseActivity
      * Include date picker and Intent to pass
      * image date to ImageDisplay class
      *
-     * @param savedInstanceState
+     * @param savedInstanceState - the state that the app was last saved in
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

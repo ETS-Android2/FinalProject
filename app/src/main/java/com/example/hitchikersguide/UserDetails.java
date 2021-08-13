@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +14,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-/** UserDetails page allows user to save/edit their name
+/**
+ * UserDetails page allows user to save/edit their name
  * Uses SharedPrefs to save input and update message on MainActivity
  * Includes a Toast message when the image is clicked
  *
@@ -27,6 +29,11 @@ public class UserDetails extends BaseActivity {
     private static final String USRNAME = "Name";
     String loginName;
 
+    /**
+     * On Create Function initializes widgets and listeners
+     *
+     * @param savedInstanceState - the state that the app was last saved in
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,9 +70,9 @@ public class UserDetails extends BaseActivity {
                     loginName = editName.getText().toString();
                     saveSharedPrefs(USRNAME, loginName);
                     userName.setText(loginName);
-//                    sendDialogDataToActivity(editName.getText().toString());
                 }
             });
+
             // create and show the alert dialog
             AlertDialog dialog = builder.create();
             dialog.show();

@@ -1,44 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/nightsky"
     tools:context=".MainActivity">
 
     <!-- App Logo -->
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="350sp"
-        android:layout_marginTop="@dimen/top_margin"
-        android:src="@drawable/thumb"
-        />
+    <ImageButton
+        android:id="@+id/AM_imageButton"
+        android:layout_width="175dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="116dp"
+        android:contentDescription="@string/mainImageDescription"
+        android:src="@drawable/logo2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Don't Panic -->
-    <TextView
+    <!-- Takes you to Image Picker -->
+    <Button
         android:id="@+id/AM_dontPanic"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top_margin"
         android:text="@string/don_t_panic"
-        android:textSize="@dimen/title_size"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textColor="@color/hh_lt_blue"
-        />
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AM_imageButton"
+        app:layout_constraintVertical_bias="0.321" />
 
-    <!-- Albert (Username) -->
+    <!-- Label for Name -->
     <TextView
-        android:id="@+id/UserName"
-        android:layout_width="match_parent"
+        android:id="@+id/AM_labelForName"
+        android:labelFor="@id/AM_enterName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/user_name"
-        android:textSize="@dimen/sub_title_size"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textColor="@color/hh_lt_blue"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/AM_enterName"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+    <!-- Enter Your Name -->
+    <EditText
+        android:id="@+id/AM_enterName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="Username"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@id/AM_labelForName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/AM_saveLogin" />
+
+    <!-- Store Name in Shared Preferences -->
+    <Button
+        android:id="@+id/AM_saveLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        app:layout_constraintStart_toEndOf="@id/AM_enterName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

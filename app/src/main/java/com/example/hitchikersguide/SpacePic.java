@@ -7,81 +7,26 @@ package com.example.hitchikersguide;
  * @author Jenne Stamplecoskie
  */
 public class SpacePic {
-    long   imgID;
     String imgDate;
     String imgURL;
+    long imgID;
     String imgTitle;
-    String imgDetails;
+    String imgDescription;
     String imgHDURL;
 
-    /**
-     * Space Pic class holds the saved images of the day and their associated data.
-     *
-     * @param imgDate - the date of the image
-     * @param imgURL - url to the image
-     * @param imgID - location in the pictures array
-     */
-    public SpacePic(long imgID, String imgDate, String imgURL){
+
+    public SpacePic(String imgDate, String imgURL, long imgID){
         // send in parameters from JSON and save them.
         this.imgDate = imgDate;
         this.imgURL = imgURL;
         this.imgID = imgID;
     }
 
-    /**
-     *  Space Pic class holds the saved images of the day and their associated data.
-     *
-     * @param imgDate - the date of the image
-     * @param imgTitle - the title of the image
-     * @param imgURL - url to the image
-     * @param imgHDURL - high definition url to the image
-     * @param imgDetails - image description
-     */
-    public SpacePic(String imgDate, String imgTitle, String imgURL, String imgHDURL, String imgDetails) {
-        this.imgDate = imgDate;
-        this.imgURL = imgURL;
-        this.imgTitle = imgTitle;
-        this.imgDetails = imgDetails;
-        this.imgHDURL = imgHDURL;
-    }
-
-    /**
-     * Set the Title of the SpacePic
-     *
-     * @param title - Title to be set for SpacePic
-     */
-    public void setTitle(String title){
-
-        this.imgTitle = title;
-    }
-
-    /**
-     * Set the Description of the SpacePic
-     *
-     * @param details - Description to be set for SpacePic
-     */
-    public void setDetails(String details){
-
-        this.imgDetails = details;
-    }
-
-    /**
-     * Set the HD URL of the SpacePic
-     *
-     * @param hdurl - high definition URL to be set for SpacePic
-     */
-    public void setHDURL(String hdurl){
-
-        this.imgHDURL = hdurl;
-    }
-
-    /**
-     * Get the Image ID
-     *
-     * @return - ImageID is returned
-     */
-    public long getImgID() {
-
-        return imgID;
-    }
+    // TODO: save title for the image
+    // TODO: open HDURL in web browser
+    //Mod 3 Intents
+//    String url = "http://www.algonquincollege.com";
+//    Intent i = new Intent(Intent.ACTION_VIEW);
+//    i.setData( Uri.parse(url) );
+//    startActivity(i);
 }

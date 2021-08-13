@@ -1,73 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <group
-        android:id="@+id/menu_top">
-        <item
-            android:id="@+id/nav_home"
-            android:title="@string/nav_main"
-            android:icon="@drawable/home"
-            android:orderInCategory="1"
-            app:showAsAction="always">
-        </item>
-    </group>
+    <item android:id="@+id/nav_image"
+        android:title="@string/nav_image"
+        android:icon="@drawable/ufo"
+        android:orderInCategory="1"
+        app:showAsAction="always">
+    </item>
 
-    <group
-        android:id="@+id/menu_mid">
+    <item android:id="@+id/nav_jokes"
+        android:title="@string/nav_jokes"
+        android:icon="@drawable/towel"
+        android:orderInCategory="2"
+        app:showAsAction="always">
+    </item>
 
-        <item
-            android:id="@+id/nav_ufo"
-            android:title="@string/nav_ufo"
-            android:icon="@drawable/ufo"
-            android:orderInCategory="2"
-            app:showAsAction="always">
-        </item>
+    <item android:id="@+id/nav_saved"
+        android:title="@string/nav_saved"
+        android:icon="@drawable/comet"
+        android:orderInCategory="3"
+        app:showAsAction="always">
+    </item>
 
-        <item
-            android:id="@+id/nav_towel"
-            android:title="@string/nav_towel"
-            android:icon="@drawable/towel"
-            android:orderInCategory="3"
-            app:showAsAction="always">
-        </item>
+    <item android:id="@+id/nav_main"
+        android:title="@string/nav_main"
+        android:icon="@drawable/number"
+        android:orderInCategory="4"
+        app:showAsAction="always">
+    </item>
 
-        <item
-            android:id="@+id/nav_comet"
-            android:title="@string/nav_comet"
-            android:icon="@drawable/comet"
-            android:orderInCategory="4"
-            app:showAsAction="always">
-        </item>
 
-        <item
-            android:id="@+id/nav_calendar"
-            android:title="@string/nav_calendar"
-            android:icon="@drawable/calendar"
-            android:orderInCategory="5"
-            app:showAsAction="always">
-        </item>
-
-        <item
-            android:id="@+id/nav_everything"
-            android:title="@string/nav_everything"
-            android:icon="@drawable/number"
-            android:orderInCategory="6"
-            app:showAsAction="always">
-        </item>
-
-    </group>
-
-    <group
-        android:id="@+id/menu_bottom">
-
-        <item
-            android:id="@+id/nav_help"
-            android:title="@string/help"
-            android:icon="@drawable/help"
-            android:orderInCategory="7"
-            app:showAsAction="always">
-        </item>
-    </group>
 </menu>
